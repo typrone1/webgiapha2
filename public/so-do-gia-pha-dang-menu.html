@@ -1,0 +1,428 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Title</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/font-awesome.css">
+    <style>
+        @media (max-width: 576px) {
+            nav .container {
+                width: 100%;
+            }
+        }
+
+        .item ul,
+        .multi-level input[type="checkbox"] {
+            display: none;
+        }
+
+        .item input:checked~ul {
+            display: block;
+        }
+        /*Arrow*/
+
+        .arrow {
+            width: 12px;
+            height: 12px;
+            vertical-align: middle;
+            float: left;
+            z-index: 0;
+            margin: 17px 1em 0 2em;
+        }
+
+        .item input+.arrow {
+            transform: rotate(-90deg);
+            transition: 0.1s;
+        }
+
+        .item input:checked+.arrow {
+            transform: rotate(0deg);
+            transition: 0.1s;
+        }
+
+        label:hover {
+            cursor: pointer;
+        }
+
+        label {
+            width: 100%;
+            display: block;
+            z-index: 3;
+            position: relative;
+        }
+
+        .multi-level {
+            width: 100%;
+            background-color: white;
+            overflow-x: hidden;
+            border-bottom: 1px solid #CFD8DC;
+        }
+
+        .multi-level ul,
+        .multi-level li,
+        label {
+            line-height: 50px;
+            margin: 0;
+            padding: 0 2em;
+            list-style: none;
+            text-decoration: none;
+            color: #90A4AE;
+            font-weight: 100;
+            width: 100%;
+        }
+
+        .item ul {
+            padding: 0 0.25em;
+        }
+
+        .multi-level li a {
+            line-height: 50px;
+            margin: 0;
+            padding: 0 4em;
+            list-style: none;
+            text-decoration: none;
+            color: #90A4AE;
+            font-weight: 100;
+        }
+
+        .tree {
+            width: 1500px;
+            margin: 50px auto;
+        }
+
+        .tree ul {
+            padding-top: 20px;
+            position: relative;
+
+            transition: all 0.5s;
+            -webkit-transition: all 0.5s;
+            -moz-transition: all 0.5s;
+        }
+
+        .tree li {
+            float: left;
+            text-align: center;
+            list-style-type: none;
+            position: relative;
+            padding: 20px 5px 0 5px;
+
+            transition: all 0.5s;
+            -webkit-transition: all 0.5s;
+            -moz-transition: all 0.5s;
+        }
+        /*We will use ::before and ::after to draw the connectors*/
+
+        .tree li::before,
+        .tree li::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 50%;
+            border-top: 1px solid #ccc;
+            width: 50%;
+            height: 20px;
+        }
+
+        .tree li::after {
+            right: auto;
+            left: 50%;
+            border-left: 1px solid #ccc;
+        }
+        /*We need to remove left-right connectors from elements without 
+any siblings*/
+
+        .tree li:only-child::after,
+        .tree li:only-child::before {
+            display: none;
+        }
+        /*Remove space from the top of single children*/
+
+        .tree li:only-child {
+            padding-top: 0;
+        }
+        /*Remove left connector from first child and 
+right connector from last child*/
+
+        .tree li:first-child::before,
+        .tree li:last-child::after {
+            border: 0 none;
+        }
+        /*Adding back the vertical connector to the last nodes*/
+
+        .tree li:last-child::before {
+            border-right: 1px solid #ccc;
+            border-radius: 0 5px 0 0;
+            -webkit-border-radius: 0 5px 0 0;
+            -moz-border-radius: 0 5px 0 0;
+        }
+
+        .tree li:first-child::after {
+            border-radius: 5px 0 0 0;
+            -webkit-border-radius: 5px 0 0 0;
+            -moz-border-radius: 5px 0 0 0;
+        }
+        /*Time to add downward connectors from parents*/
+
+        .tree ul ul::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            border-left: 1px solid #ccc;
+            width: 0;
+            height: 20px;
+        }
+
+        .tree li a {
+            border: 1px solid #ccc;
+            padding: 5px 10px;
+            text-decoration: none;
+            color: #666;
+            font-family: arial, verdana, tahoma;
+            font-size: 11px;
+            display: inline-block;
+
+            border-radius: 5px;
+            -webkit-border-radius: 5px;
+            -moz-border-radius: 5px;
+
+            transition: all 0.5s;
+            -webkit-transition: all 0.5s;
+            -moz-transition: all 0.5s;
+        }
+        /*Time for some hover effects*/
+        /*We will apply the hover effect the the lineage of the element also*/
+
+        .tree li a:hover,
+        .tree li a:hover+ul li a {
+            background: #c8e4f8;
+            color: #000;
+            border: 1px solid #94a0b4;
+        }
+        /*Connector styles on hover*/
+
+        .tree li a:hover+ul li::after,
+        .tree li a:hover+ul li::before,
+        .tree li a:hover+ul::before,
+        .tree li a:hover+ul ul::before {
+            border-color: #94a0b4;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-toggleable-sm navbar-inverse bg-inverse">
+        <div class="container">
+            <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <a href="index.html" class="navbar-brand">Gia phả</a>
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item active">
+                        <a href="index.html" class="nav-link">Trang chủ </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link">Hồ sơ thành viên </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link">Xem cây gia phả </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link">Xem lịch việc tộc </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link">Giới thiệu </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link">Tìm kiếm </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <header id="page-header">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 offset-md-3 text-center">
+                    <h1>About Us</h1>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia, ea.</p>
+                </div>
+            </div>
+        </div>
+    </header>
+    <section>
+        <div class="container py-5">
+            <div class="row">
+                <div class="col-12">
+                    <ul class="nav nav-pills nav-justified" role="tablist">
+                        <li class="nav-item">
+                            <a class="nav-link active" data-toggle="tab" href="#home" role="tab" aria-controls="home">Sơ đồ dạng Menu</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" data-toggle="tab" href="#profile" role="tab" aria-controls="profile">Sơ đồ dạng cây</a>
+                        </li>
+                    </ul>
+
+                </div>
+
+            </div>
+        </div>
+    </section>
+    <div class="tab-content">
+        <div class="tab-pane active" id="home" role="tabpanel">
+            <div class="container-fluid">
+
+
+                <div class="container">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="multi-level card">
+                                <div class="item">
+                                    <input type="checkbox" id="A" checked/>
+                                    <img src="img/Arrow.png" class="arrow"><label for="A">Services</label>
+
+                                    <ul>
+                                        <li><a href="#">Branding</a></li>
+                                        <li><a href="#">Web/App Development</a></li>
+                                        <li><a href="#">Internet Marketing and SEO</a></li>
+                                    </ul>
+                                </div>
+                                <div class="item">
+                                    <input type="checkbox" id="B" checked />
+                                    <img src="img/Arrow.png" class="arrow"><label for="B">Jobs</label>
+
+                                    <ul>
+                                        <li>
+                                            <div class="sub-item">
+                                                <input type="checkbox" id="B-A" checked/>
+                                                <img src="img/Arrow.png" class="arrow"><label for="B-A">UI/UX</label>
+
+                                                <ul>
+                                                    <li><a href="#">UI/UX Designer</a></li>
+                                                    <li><a href="#">UI Designer</a></li>
+                                                    <li><a href="#">UX Designer</a></li>
+                                                </ul>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="sub-item">
+                                                <input type="checkbox" id="B-B" checked/>
+                                                <img src="img/Arrow.png" class="arrow"><label for="B-B">Development</label>
+
+                                                <ul>
+                                                    <li><a href="#">Front end Developer</a></li>
+                                                    <li><a href="#">Back end Developer</a></li>
+                                                </ul>
+
+                                            </div>
+                                        </li>
+                                        <li><a href="#">Graphic Designer</a></li>
+                                        <li><a href="#">Logo Designer</a></li>
+
+                                    </ul>
+                                </div>
+                                <div class="item">
+                                    <input type="checkbox" id="C" checked/>
+                                    <img src="img/Arrow.png" class="arrow"><label for="C">About Us</label>
+
+                                    <ul>
+                                        <li><a href="#">Our Team</a></li>
+                                        <li><a href="#">Clients</a></li>
+                                        <li><a href="#">Our Work</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="tab-pane" id="profile" role="tabpanel">
+            <div class="container-fluid ">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-12 card"  style="overflow: scroll">
+                            <div class="tree">
+                                <ul>
+                                    <li>
+                                        <a href="#">Parent</a>
+                                        <ul>
+                                            <li>
+                                                <a href="#">Child</a>
+                                                <ul>
+                                                    <li>
+                                                        <a href="#">Grand Child</a>
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                            <li>
+                                                <a href="#">Child</a>
+                                                <ul>
+                                                    <li><a href="#">Grand Child</a></li>
+                                                    <li>
+                                                        <a href="#">Grand Child</a>
+                                                        <ul>
+                                                            <li>
+                                                                <a href="#">Great Grand Child</a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="#">Great Grand Child</a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="#">Great Grand Child</a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="#">Child</a>
+                                                                <ul>
+                                                                    <li>
+                                                                        <a href="#">Grand Child</a>
+                                                                    </li>
+
+                                                                </ul>
+                                                            </li>
+                                                            <li>
+                                                                <a id="hello" href="#">Great Grand Child</a>
+                                                            </li>
+
+                                                        </ul>
+                                                    </li>
+                                                    <li><a href="#">Grand Child</a></li>
+                                                </ul>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+
+        </div>
+        <footer id="main-footer" class="text-center p-4">
+            <div class="container">
+                <div class="row">
+                    <div class="col">
+                        <p>Copyright 2017 &copy; 2017 Web Gia Phả</p>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+
+        <script src="js/jquery-3.2.1.js"></script>
+        <script src="tether/tether.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+</body>
+
+</html>
