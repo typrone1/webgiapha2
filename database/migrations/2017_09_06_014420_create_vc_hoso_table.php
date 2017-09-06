@@ -22,7 +22,6 @@ class CreateVcHosoTable extends Migration
             $table->string('hotenbo');
             $table->string('hotenme');
             $table->integer('conthu')->nullable();
-
             $table->date('ngaysinh')->nullable();
             $table->string('quequan');
             $table->string('dantoc')->default('Kinh');

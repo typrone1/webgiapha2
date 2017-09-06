@@ -12,5 +12,12 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return redirect()->route('dashboard');
 });
+
+Route::get('admin', 'AdminController@index')->name('dashboard');
+Route::get('quan-ly-ho-so', 'AdminController@getQuanLyHoSo')->name('quan-ly-ho-so');
+Route::get('tim-kiem-ho-so', 'AdminController@getTimKiemHoSo')->name('tim-kiem');
+Route::get('chi-tiet-ho-so/{id}', 'AdminController@getChiTietHoSo')->name('chi-tiet-ho-so');
+
+
