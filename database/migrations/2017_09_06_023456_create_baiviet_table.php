@@ -15,11 +15,10 @@ class CreateBaivietTable extends Migration
     {
         Schema::create('baiviet', function (Blueprint $table) {
             $table->increments('mabaiviet');
+            $table->integer('madanhmuc')->unsigned();
             $table->foreign('madanhmuc')->references('madanhmuc')->on('danhmuc');
             $table->string('tieude');
-            $table->string('noidung');
-            $table->string('nguoiviet');
-            $table->boolean('congkhai')->default(true);
+            $table->text('noidung');
             $table->timestamps();
         });
     }

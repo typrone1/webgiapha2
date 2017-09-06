@@ -1,8 +1,8 @@
 <?php
-
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
+
 
 class CreateVcCongviecTable extends Migration
 {
@@ -16,7 +16,7 @@ class CreateVcCongviecTable extends Migration
         Schema::create('vccongviec', function (Blueprint $table) {
             $table->increments('manghenghiep');
             $table->integer('mahoso')->unsigned();
-            $table->foreign('mahoso')->references('mahoso')->on('vchoso');
+            $table->foreign('mahoso')->references('mahoso')->on('hoso');
             $table->string('tgtu');
             $table->string('tgden');
             $table->string('chucvu');

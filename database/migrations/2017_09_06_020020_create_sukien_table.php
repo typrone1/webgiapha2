@@ -19,7 +19,7 @@ class CreateSukienTable extends Migration
             $table->foreign('mahoso')->references('mahoso')->on('hoso');
             $table->date('ngaydienra');
             $table->string('tensukien');
-            $table->noidung('ghichu')->nullable();
+            $table->string('ghichu')->nullable();
             $table->timestamps();
         });
     }

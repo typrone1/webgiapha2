@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateDanhmucTable extends Migration
+class CreateViectocTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,11 @@ class CreateDanhmucTable extends Migration
      */
     public function up()
     {
-        Schema::create('danhmuc', function (Blueprint $table) {
-            $table->increments('madanhmuc');
-            $table->increments('tendanhmuc');
-            $table->string('mota');
+        Schema::create('viectoc', function (Blueprint $table) {
+            $table->increments('maviectoc');
+            $table->date('ngaydienra');
+            $table->string('tensukien');
+            $table->text('noidung');
             $table->timestamps();
         });
     }
@@ -28,6 +29,6 @@ class CreateDanhmucTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('danhmuc');
+        Schema::dropIfExists('viectoc');
     }
 }
