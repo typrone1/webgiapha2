@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\HoSo;
+use App\VCHoSo;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Session;
@@ -23,6 +24,18 @@ class AdminController extends Controller
     }
     protected function getChiTietHoSo(Request $request){
         $hoSo = HoSo::where('mahoso', $request->id)->first();
-        return view('admin.chi-tiet-ho-so', compact('hoSo'));
+        if(isset($hoSo)){
+            $hoSoBo = HoSo::where('mahoso', $hoSo->mahsbo)->first();
+            if (isset($hoSoBo)){
+                $hoSoOng = HoSo::where('mahoso', $hoSoBo->mahsbo)->first();
+            }
+        }
+        $dsVo = VCHoSo::where('mahosovc',$hoSo->maHoSo)->get();
+        $dsCon = HoSo::where('mahsbo', $request->id)->get();
+        return view('admin.chi-tiet-ho-so', compact(['hoSo','hoSoBo','hoSoOng','dsVo','dsCon']));
+    }
+    protected function getThemHoSo(){
+        $dsNhanhBo = HoSo::all();
+        return view('admin.them-ho-so', compact('dsNhanhBo'));
     }
 }

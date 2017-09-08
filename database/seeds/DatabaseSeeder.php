@@ -30,9 +30,23 @@ class DatabaseSeeder extends Seeder
         ]);
         $hoSo = HoSo::create([
             'mahotoc' => 1,
-            'mahsbo' => null,
+            'mahsbo' => 1,
             'mahsme' => null,
-            'hoten' => 'Nguyễn Văn Trưởng',
+            'hoten' => 'Nguyễn Văn Phó',
+            'ngaysinh' => '1950-08-20',
+            'gioitinh' => true,
+            'doithu' => 1,
+            'conthu' => 1,
+            'quequan' => 'Lorem Ipsum',
+            'diachi' => 'Lorem Ipsum',
+            'nguoiky' => 'Ông A',
+            'damat' => true
+        ]);
+        $hoSo = HoSo::create([
+            'mahotoc' => 1,
+            'mahsbo' => 2,
+            'mahsme' => null,
+            'hoten' => 'Nguyễn Văn Tam',
             'ngaysinh' => '1950-08-20',
             'gioitinh' => true,
             'doithu' => 1,
@@ -46,7 +60,7 @@ class DatabaseSeeder extends Seeder
             'mahotoc' => 1,
             'mahsbo' => null,
             'mahsme' => null,
-            'hoten' => 'Nguyễn Văn Trưởng',
+            'hoten' => 'Nguyễn Văn Nhì Hai',
             'ngaysinh' => '1950-08-20',
             'gioitinh' => true,
             'doithu' => 1,
@@ -58,7 +72,21 @@ class DatabaseSeeder extends Seeder
         ]);
         $hoSo = HoSo::create([
             'mahotoc' => 1,
-            'mahsbo' => null,
+            'mahsbo' => 4,
+            'mahsme' => null,
+            'hoten' => 'Nguyễn Con Nhì Hai',
+            'ngaysinh' => '1950-08-20',
+            'gioitinh' => true,
+            'doithu' => 1,
+            'conthu' => 1,
+            'quequan' => 'Lorem Ipsum',
+            'diachi' => 'Lorem Ipsum',
+            'nguoiky' => 'Ông A',
+            'damat' => true
+        ]);
+        $hoSo = HoSo::create([
+            'mahotoc' => 1,
+            'mahsbo' => 2,
             'mahsme' => null,
             'hoten' => 'Nguyễn Văn Trưởng',
             'ngaysinh' => '1950-08-20',
@@ -72,7 +100,7 @@ class DatabaseSeeder extends Seeder
         ]);
         $hoSo = HoSo::create([
             'mahotoc' => 1,
-            'mahsbo' => null,
+            'mahsbo' => 3,
             'mahsme' => null,
             'hoten' => 'Nguyễn Văn Trưởng',
             'ngaysinh' => '1950-08-20',
@@ -86,7 +114,7 @@ class DatabaseSeeder extends Seeder
         ]);
         $hoSo = HoSo::create([
             'mahotoc' => 1,
-            'mahsbo' => null,
+            'mahsbo' => 4,
             'mahsme' => null,
             'hoten' => 'Nguyễn Văn Trưởng',
             'ngaysinh' => '1950-08-20',
@@ -100,35 +128,7 @@ class DatabaseSeeder extends Seeder
         ]);
         $hoSo = HoSo::create([
             'mahotoc' => 1,
-            'mahsbo' => null,
-            'mahsme' => null,
-            'hoten' => 'Nguyễn Văn Trưởng',
-            'ngaysinh' => '1950-08-20',
-            'gioitinh' => true,
-            'doithu' => 1,
-            'conthu' => 1,
-            'quequan' => 'Lorem Ipsum',
-            'diachi' => 'Lorem Ipsum',
-            'nguoiky' => 'Ông A',
-            'damat' => true
-        ]);
-        $hoSo = HoSo::create([
-            'mahotoc' => 1,
-            'mahsbo' => null,
-            'mahsme' => null,
-            'hoten' => 'Nguyễn Văn Trưởng',
-            'ngaysinh' => '1950-08-20',
-            'gioitinh' => true,
-            'doithu' => 1,
-            'conthu' => 1,
-            'quequan' => 'Lorem Ipsum',
-            'diachi' => 'Lorem Ipsum',
-            'nguoiky' => 'Ông A',
-            'damat' => true
-        ]);
-        $hoSo = HoSo::create([
-            'mahotoc' => 1,
-            'mahsbo' => null,
+            'mahsbo' => 5,
             'mahsme' => null,
             'hoten' => 'Nguyễn Văn Trưởng',
             'ngaysinh' => '1950-08-20',

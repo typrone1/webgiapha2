@@ -23,17 +23,17 @@
             <div class="row">
 
                 <div class="col-md-9">
-                    <h5>(Ông) Nguyễn Văn A</h5>
-                    <p>Đời thứ: 9 - Con thứ 2</p>
+                    <h5>{{ $hoSo->hoten }}</h5>
+                    <p>Đời thứ: {{$hoSo->doithu}} - Con thứ {{$hoSo->conthu}} </p>
                     <hr>
                     <div class="form-group row">
                         <label for="example-text-input" class="col-md-2 col-form-label">Tên tự (Hiệu)</label>
                         <div class="col-md-4">
-                            <input class="form-control" type="text" value="A Phủ" id="example-text-input">
+                            <input class="form-control" type="text" value="" id="example-text-input">
                         </div>
                         <label for="example-text-input" class="col-md-2 col-form-label">Tên thường gọi</label>
                         <div class="col-md-4">
-                            <input class="form-control" type="text" value="A Phủ" id="example-text-input">
+                            <input class="form-control" type="text" value="" id="example-text-input">
                         </div>
                     </div>
                     <div class="form-group row">
@@ -46,7 +46,11 @@
                             </div>
                             <div class="form-check form-check-inline">
                                 <label class="form-check-label">
+                                    @if($hoSo->gioitinh !== true)
                                     <input class="form-check-input" type="radio" name="gioi-tinh" id="gioi-tinh" value="nu"> Nữ
+                                    @else
+                                    <input class="form-check-input" type="radio" name="gioi-tinh" id="gioi-tinh" value="nu" checked>
+                                    @endif
                                 </label>
                             </div>
                         </div>
@@ -54,7 +58,7 @@
                     <div class="form-group row">
                         <label for="example-text-input" class="col-md-2 col-form-label">Nơi ở</label>
                         <div class="col-md-10">
-                            <input class="form-control" type="text" value="" id="example-text-input">
+                            <input class="form-control" type="text" value="{{$hoSo->diachi}}" id="example-text-input">
                         </div>
                     </div>
                     <div class="form-group row">
@@ -70,20 +74,20 @@
                     <div class="form-group row">
                         <label for="example-text-input" class="col-md-2 col-form-label">Địa chỉ Email:</label>
                         <div class="col-md-10">
-                            <input class="form-control" type="text" value="" id="example-text-input">
+                            <input class="form-control" type="text" value="{{$hoSo->email}}" id="example-text-input">
                         </div>
                     </div>
                     <div class="form-group row">
                         <label for="example-text-input" class="col-md-2 col-form-label">Số điện thoại:</label>
                         <div class="col-md-10">
-                            <input class="form-control" type="text" value="" id="example-text-input">
+                            <input class="form-control" type="text" value="{{$hoSo->sdt}}" id="example-text-input">
                         </div>
                     </div>
                     <div class="bg-faded" style="border-radius: 5px;">
                         <div class="container p-2">
                             <div class="row">
-                                <div class="col-6">Ngày mất: 6/2/1999</div>
-                                <div class="col-6">Nơi mất: </div>
+                                <div class="col-6">Ngày mất: {{$hoSo->ngaymat}}</div>
+                                <div class="col-6">Nơi mất: {{$hoSo->noimat}} </div>
                             </div>
 
                             <div class="row">
@@ -171,7 +175,7 @@
                         <tr>
                             <td colspan="3" align="center" valign="middle">
                                 <div style=" width: 400px;text-align:center; vertical-align:middle; background: url({{asset('img/pattern.jpg')}})">Con: <br>
-                                    <font color="#FF0000">Đời thứ: 10 - Con thứ: 3</font><br><a href="#">Trần Hưng Hân</a></div>
+                                    <span color="#FF0000">Đời thứ: 10 - Con thứ: 3</span><br><a href="#">{{ $hoSoOng->hoten }}</a></div>
                             </td>
                         </tr>
                         <tr>
@@ -180,7 +184,7 @@
                         <tr>
                             <td colspan="3" align="center" valign="middle">
                                 <div style="width: 400px;  text-align:center; vertical-align:middle; background: url({{asset('img/pattern.jpg')}})">Con: <br>
-                                    <font color="#FF0000">Đời thứ: 10 - Con thứ: 3</font><br><a href="#">Trần Hưng Hân</a></div>
+                                    <span color="#FF0000">Đời thứ: 10 - Con thứ: 3</span><br><a href="#">{{ $hoSoBo->hoten }}</a></div>
                             </td>
                         </tr>
                         <tr>
@@ -194,14 +198,14 @@
                                         <td width="50%" align="center" valign="top" style="vertical-align:middle; background: url({{asset('img/pattern.jpg')}})">
                                             <div align="center" style="background-color:#FFFFFF"><img src="{{asset('img/down.gif')}}"></div>
                                             <div style="text-align:center; vertical-align:middle; position: relative">Con: <br>
-                                                <font color="#FF0000">Đời thứ: 10 - Con thứ: 3</font><br><a href="#">Trần Hưng Hân</a>
+                                                <span color="#FF0000">Đời thứ: 10 - Con thứ: 3</span><br><a href="#">{{ $hoSo->hoten }}</a>
                                                 <div style="position: absolute; right: 0; top: 0; height: 100%; width: 1px; background-color: #fff "></div>
                                             </div>
                                         </td>
                                         <td width="50%" align="center" valign="top" style="vertical-align:middle; background: url({{asset('img/pattern.jpg')}})">
                                             <div align="center" style="background-color:#FFFFFF"><img src="{{asset('img/down.gif')}}"></div>
                                             <div style="text-align:center; vertical-align:middle; position: relative">Con: <br>
-                                                <font color="#FF0000">Đời thứ: 10 - Con thứ: 3</font><br><a href="#">Trần Hưng Hân</a>
+                                                <span color="#FF0000">Đời thứ: 10 - Con thứ: 3</span><br><a href="#">Trần Hưng Hân</a>
                                                 <div style="position: absolute; right: 0; top: 0; height: 100%; width: 1px; background-color: #fff "></div>
                                             </div>
                                         </td>
@@ -215,72 +219,26 @@
                             </td>
                         </tr>
                         <tr>
-                            <td colspan="3" align="center" style="position: relative"><img src="{{asset('img/VLine.jpg')}}" width="89%" height="1px" style="position: absolute; left: 5.5%">
+                            <?php
+                            $count = $dsCon->count();
+                            $percent = 100/$count;
+                            $linePercent = (100/$count);
+                            $marginPercent = $linePercent/2;
+                            ?>
+                            <td colspan="3" align="center" style="position: relative"><img src="{{asset('img/VLine.jpg')}}" width="{{$linePercent*($count-1)}}%" height="1px" style="position: absolute; left: {{$marginPercent}}%">
                                 <table width="100%" border="0" cellspacing="0" cellpadding="0">
                                     <tbody>
-                                    <td width="10%" align="center" valign="top" style="vertical-align:middle; background: url({{asset('img/pattern.jpg')}})">
+
+                                    @foreach($dsCon as $con)
+                                    <td width="{{$percent}}%" align="center" valign="top" style="vertical-align:middle; float: left; background: url({{asset('img/pattern.jpg')}})">
                                         <div align="center" style="background-color:#FFFFFF"><img src="{{asset('img/down.gif')}}"></div>
                                         <div style="text-align:center; vertical-align:middle; position: relative">Con: <br>
-                                            <font color="#FF0000">Đời thứ: 10 - Con thứ: 3</font><br><a href="#">Trần Hưng Hân</a>
+                                            <span color="#FF0000">Đời thứ: 10 - Con thứ: 3</span><br><a href="#">{{$con->hoten}}</a>
                                             <div style="position: absolute; right: 0; top: 0; height: 100%; width: 1px; background-color: #fff "></div>
                                         </div>
                                     </td>
-                                    <td width="10%" align="center" valign="top" style="vertical-align:middle; background: url({{asset('img/pattern.jpg')}})">
-                                        <div align="center" style="background-color:#FFFFFF"><img src="{{asset('img/down.gif')}}"></div>
-                                        <div style="text-align:center; vertical-align:middle; position: relative">Con: <br>
-                                            <font color="#FF0000">Đời thứ: 10 - Con thứ: 3</font><br><a href="#">Trần Hưng Hân</a>
-                                            <div style="position: absolute; right: 0; top: 0; height: 100%; width: 1px; background-color: #fff "></div>
-                                        </div>
-                                    </td>
-                                    <td width="10%" align="center" valign="top" style="vertical-align:middle; background: url({{asset('img/pattern.jpg')}})">
-                                        <div align="center" style="background-color:#FFFFFF"><img src="{{asset('img/down.gif')}}"></div>
-                                        <div style="text-align:center; vertical-align:middle; position: relative">Con: <br>
-                                            <font color="#FF0000">Đời thứ: 10 - Con thứ: 3</font><br><a href="#">Trần Hưng Hân</a>
-                                            <div style="position: absolute; right: 0; top: 0; height: 100%; width: 1px; background-color: #fff "></div>
-                                        </div>
-                                    </td>
-                                    <td width="10%" align="center" valign="top" style="vertical-align:middle; background: url({{asset('img/pattern.jpg')}})">
-                                        <div align="center" style="background-color:#FFFFFF"><img src="{{asset('img/down.gif')}}"></div>
-                                        <div style="text-align:center; vertical-align:middle; position: relative">Con: <br>
-                                            <font color="#FF0000">Đời thứ: 10 - Con thứ: 3</font><br><a href="#">Trần Hưng Hân</a>
-                                            <div style="position: absolute; right: 0; top: 0; height: 100%; width: 1px; background-color: #fff "></div>
-                                        </div>
-                                    </td>
-                                    <td width="10%" align="center" valign="top" style="vertical-align:middle; background: url({{asset('img/pattern.jpg')}})">
-                                        <div align="center" style="background-color:#FFFFFF"><img src="{{asset('img/down.gif')}}"></div>
-                                        <div style="text-align:center; vertical-align:middle; position: relative">Con: <br>
-                                            <font color="#FF0000">Đời thứ: 10 - Con thứ: 3</font><br><a href="#">Trần Hưng Hân</a>
-                                            <div style="position: absolute; right: 0; top: 0; height: 100%; width: 1px; background-color: #fff "></div>
-                                        </div>
-                                    </td>
-                                    <td width="10%" align="center" valign="top" style="vertical-align:middle; background: url({{asset('img/pattern.jpg')}})">
-                                        <div align="center" style="background-color:#FFFFFF"><img src="{{asset('img/down.gif')}}"></div>
-                                        <div style="text-align:center; vertical-align:middle; position: relative">Con: <br>
-                                            <font color="#FF0000">Đời thứ: 10 - Con thứ: 3</font><br><a href="#">Trần Hưng Hân</a>
-                                            <div style="position: absolute; right: 0; top: 0; height: 100%; width: 1px; background-color: #fff "></div>
-                                        </div>
-                                    </td>
-                                    <td width="10%" align="center" valign="top" style="vertical-align:middle; background: url({{asset('img/pattern.jpg')}})">
-                                        <div align="center" style="background-color:#FFFFFF"><img src="{{asset('img/down.gif')}}"></div>
-                                        <div style="text-align:center; vertical-align:middle; position: relative">Con: <br>
-                                            <font color="#FF0000">Đời thứ: 10 - Con thứ: 3</font><br><a href="#">Trần Hưng Hân</a>
-                                            <div style="position: absolute; right: 0; top: 0; height: 100%; width: 1px; background-color: #fff "></div>
-                                        </div>
-                                    </td>
-                                    <td width="10%" align="center" valign="top" style="vertical-align:middle; background: url({{asset('img/pattern.jpg')}})">
-                                        <div align="center" style="background-color:#FFFFFF"><img src="{{asset('img/down.gif')}}"></div>
-                                        <div style="text-align:center; vertical-align:middle; position: relative">Con: <br>
-                                            <font color="#FF0000">Đời thứ: 10 - Con thứ: 3</font><br><a href="#">Trần Hưng Hân</a>
-                                            <div style="position: absolute; right: 0; top: 0; height: 100%; width: 1px; background-color: #fff "></div>
-                                        </div>
-                                    </td>
-                                    <td width="10%" align="center" valign="top" style="vertical-align:middle; background: url({{asset('img/pattern.jpg')}})">
-                                        <div align="center" style="background-color:#FFFFFF"><img src="{{asset('img/down.gif')}}"></div>
-                                        <div style="text-align:center; vertical-align:middle; position: relative">Con: <br>
-                                            <font color="#FF0000">Đời thứ: 10 - Con thứ: 3</font><br><a href="#">Trần Hưng Hân</a>
-                                            <div style="position: absolute; right: 0; top: 0; height: 100%; width: 1px; background-color: #fff "></div>
-                                        </div>
-                                    </td>
+                                    @endforeach
+
 
                                     </tbody>
                                 </table>

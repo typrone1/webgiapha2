@@ -26,16 +26,16 @@
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
-            <a href="index.html" class="navbar-brand">Gia phả</a>
+            <a href="/" class="navbar-brand">Gia phả</a>
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item active">
-                    <a href="index.html" class="nav-link">Trang chủ </a>
+                    <a href="/" class="nav-link">Trang chủ </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link">Hồ sơ thành viên </a>
+                    <a class="nav-link" href="{{route('quan-ly-ho-so')}}">Hồ sơ thành viên </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link">Xem cây gia phả </a>
+                    <a class="nav-link" href="{{route('so-do-gia-pha')}}">Xem cây gia phả </a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link">Xem lịch việc tộc </a>

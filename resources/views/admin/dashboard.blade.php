@@ -15,9 +15,9 @@
             <div class="row">
                 <div class="col-md-6 mb-5">
                     <div class="card" style="height: 180px;">
-                        <div class="card-block  bg-primary">
+                        <div class="card-block  bg-warning">
                             <i class="fa fa-bookmark fa-4x"></i>
-                            <span style="font-size: 2em">Quản lý hồ sơ</span>
+                            <a  href="{{route('quan-ly-ho-so')}}" class="btn btn-primary btn-lg">Quản lý hồ sơ</a>
                         </div>
 
                     </div>

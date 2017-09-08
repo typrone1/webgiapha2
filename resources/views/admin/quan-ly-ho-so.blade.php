@@ -14,12 +14,16 @@
     <section id="actions" class="py-4 mb-4 bg-faded">
         <div class="container">
             <div class="row">
-                <div class="col-md-6 offset-md-6">
-                    <form class="form-inline" action="{{route('tim-kiem')}}" method="get">
-                        <label class="sr-only" for="inlineFormInput">Tìm kiếm</label>
-                        <input type="text" class="form-control mb-2 mr-sm-2 mb-sm-0" id="inlineFormInput" name="keyword">
-                        <button type="submit" class="btn btn-warning">Tìm kiếm</button>
-                    </form>
+                <a href="{{ route('them-ho-so') }}" class="btn btn-primary">Thêm hồ sơ</a>
+                <div class="col-md-6 offset-md-3">
+                    <div class="row">
+                        <form class="form-inline" action="{{route('tim-kiem')}}" method="get">
+                            <label class="sr-only" for="inlineFormInput">Tìm kiếm</label>
+                            <input type="text" class="form-control mb-2 mr-sm-2 mb-sm-0" id="inlineFormInput" name="keyword">
+                            <button type="submit" class="btn btn-warning">Tìm kiếm</button>
+                        </form>
+                    </div>
+
                 </div>
             </div>
         </div>
@@ -44,7 +48,7 @@
                                 <h5>{{ $hoso->hoten }}</h5>
                                 <p><span>Ngày sinh: {{ $hoso->ngaysinh }}</span> - <span>Ngày dỗ: 31/2/1999</span></p>
                                 <p><span>Quê quán</span></p>
-                                <a href="#" class="btn btn-primary">Xem thêm</a>
+                                <a href="{{ route('chi-tiet-ho-so', $hoso->mahoso)}}" class="btn btn-primary">Xem chi tiết</a>
                             </div>
                         </div>
                     </div>
