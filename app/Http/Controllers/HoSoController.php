@@ -10,11 +10,11 @@ use Illuminate\Support\Facades\DB;
 class HoSoController extends Controller
 {
     protected function postDangKyHoSo(Request $request){
-
         $hoSo = new HoSo();
         $hoSo->mahotoc = 1;
         $hoSo->hoten = $request->get('ho-ten');
         $hoSo->mahsbo = $request->get('nhanh-bo');
+        $hoSo->mahsme = $request->get('nhanh-me');
         $hoSo->doithu = $request->get('doi-thu');
         $hoSo->conthu = $request->get('con-thu');
         $hoSo->ngaysinh = $request->get('ngay-sinh');
@@ -31,24 +31,24 @@ class HoSoController extends Controller
     }
 
 
-    protected function test(){
-        $maHoSo = 7;
-        $hoSo = HoSo::where('mahoso', $maHoSo)->first();
-        $hoSoBo = HoSo::where('mahoso', $hoSo->mahsbo)->first();
-        $hoSoOng = HoSo::where('mahoso', $hoSoBo->mahsbo)->first();
-        echo "Bố là". $hoSoBo->hoten;
-        echo "Ông là". $hoSoOng->hoten;
-        $dsVo = VCHoSo::where('mahosovc', $maHoSo)->get();
-        echo "Danh sách vợ <br>";
-        foreach ($dsVo as $vo){
-            echo $vo->hoten;
-        }
-        $dsCon = HoSo::where('mahsbo', $maHoSo)->get();
-        echo "Danh sách con <br>";
-        foreach ($dsCon as $con){
-            echo $con->hoten;
-        }
-    }
+//    protected function test(){
+//        $maHoSo = 7;
+//        $hoSo = HoSo::where('mahoso', $maHoSo)->first();
+//        $hoSoBo = HoSo::where('mahoso', $hoSo->mahsbo)->first();
+//        $hoSoOng = HoSo::where('mahoso', $hoSoBo->mahsbo)->first();
+//        echo "Bố là". $hoSoBo->hoten;
+//        echo "Ông là". $hoSoOng->hoten;
+//        $dsVo = VCHoSo::where('mahosovc', $maHoSo)->get();
+//        echo "Danh sách vợ <br>";
+//        foreach ($dsVo as $vo){
+//            echo $vo->hoten;
+//        }
+//        $dsCon = HoSo::where('mahsbo', $maHoSo)->get();
+//        echo "Danh sách con <br>";
+//        foreach ($dsCon as $con){
+//            echo $con->hoten;
+//        }
+//    }
     protected function deQuyTimDoi($data, $id, $soDoi = 1)
     {
         if ($id==1){
@@ -77,6 +77,12 @@ class HoSoController extends Controller
         $hoSo->sdt = $request->sdt;
         $hoSo->save();
         return redirect()->back()->with('thongbao', "Tạo hồ sơ thành công");
+    }
+
+    protected function getThemCon($id){
+        $hoSo = HoSo::find($id);
+        $dsVo = VCHoSo::where('mahosovc',$id)->get();
+        return view('admin.them-con', compact('hoSo','dsVo'));
     }
 
 }

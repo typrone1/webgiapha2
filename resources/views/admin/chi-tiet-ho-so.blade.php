@@ -4,7 +4,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-3 mr-auto">
-                    <a href="index.html" class="btn btn-secondary btn-block"><i class="fa fa-arrow-left"></i> Back To Dashboard</a>
+                    <a onclick="window.history.go(-1)" class="btn btn-secondary btn-block"><i class="fa fa-arrow-left"></i> Back To Dashboard</a>
                 </div>
 
                 <div class="col-md-3">
@@ -119,25 +119,32 @@
     <section id="gia-dinh" class="p-5 bg-info">
         <div class="container">
             <div class="row">
+                <?php
+                $count = 0;
+                ?>
+                @foreach($dsVo as $vo)
+                <?php
+                    $count++
+                ?>
                 <div class="col-12">
-                    <h5><i class="fa fa-arrow-circle-o-up"></i>Chánh thất: Nguyễn Thị C</h5>
-                    <p>Năm sinh: 1980</p>
-                    <p>Quê quán: </p>
-                    <p>Mất ngày: </p>
+                    <h5><i class="fa fa-arrow-circle-o-up"></i> Vợ {{$count}} {{ $vo->hoten }}</h5>
+                    <p>Năm sinh: {{$year = date('Y', strtotime($vo->ngaysinh))}}</p>
+                    <p>Quê quán: {{ $vo->quequan }}</p>
+                    <p>Mất ngày: {{ $vo->ngaymat }}</p>
                     <p>Nơi mất: </p>
-                    <p>Nơi an táng: </p>
+                    <p>Nơi an táng: {{$vo->noiantang}}</p>
                     <p>Sinh hạ:</p>
-                    <ul>
-                        <li><a></a>Con thứ: 1 - Đời thứ: 10 Nguyễn Thị G</li>
-                        <li><a></a>Con thứ: 1 - Đời thứ: 10 Nguyễn Thị G</li>
-                        <li><a></a>Con thứ: 1 - Đời thứ: 10 Nguyễn Thị G</li>
-                        <li><a></a>Con thứ: 1 - Đời thứ: 10 Nguyễn Thị G</li>
-                        <li><a></a>Con thứ: 1 - Đời thứ: 10 Nguyễn Thị G</li>
-                        <li><a></a>Con thứ: 1 - Đời thứ: 10 Nguyễn Thị G</li>
-                    </ul>
+                    <ol>
+                        @foreach($dsCon as $con)
+                            @if($con->mahsme == $vo->mahoso )
+                                <li><a class="btn btn-link" href="{{ route('chi-tiet-ho-so', $con->mahoso) }}">Con thứ: {{$con->conthu}} - Đời thứ: {{$con->doithu}} {{$con->hoten}}</a></li>
+                            @endif
+                        @endforeach
+                    </ol>
                 </div>
-                <a href="#" class="btn btn-primary">Thêm vợ</a>
-                <a href="#" class="btn btn-secondary">Thêm con</a>
+                @endforeach
+                <a href="{{route('them-vo', $hoSo->mahoso)}}" class="btn btn-primary">Thêm vợ</a>
+                <a href="{{route('them-con', $hoSo->mahoso)}}" class="btn btn-secondary">Thêm con</a>
             </div>
         </div>
     </section>

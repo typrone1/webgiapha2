@@ -18,7 +18,7 @@
                         <div class="card-block">
                             <h4 class="text-center">Ảnh hiển thị</h4>
                             <hr>
-                            <img src="img/avatar.png" class="img-thumbnail" alt="">
+                            <img src="{{asset('img/avatar.png')}}" class="img-thumbnail" alt="">
                             <div class="form-group">
                                 <label for="exampleInputFile">Chọn đường dẫn</label>
                                 <input type="file" class="form-control-file  w-100" id="exampleInputFile" aria-describedby="fileHelp">
@@ -34,29 +34,21 @@
                             <input type="hidden" name="_token" value="{{ csrf_token()}}"/>
                             <div class="card-block">
                                 <h3 class="text-center">Thông tin cá nhân</h3>
+                                <p class="text-center font-italic">Con của {{$hoSo->hoten}}</p>
                                 @if(Session::has('thongbao'))
                                     <div class="alert alert-success" role="alert">
                                         <strong>Tạo hồ sơ thành công!</strong>
                                     </div>
                                 @endif
                                 <hr>
-                                <div class="form-group row">
-                                    <label for="example-text-input" class="col-4 col-form-label">Chọn nhánh bố</label>
-                                    <div class="col-8">
-                                        <select class="form-control" id="nhanh-bo" name="nhanh-bo">
-                                            @foreach($dsNhanhBo as $nhanhBo)
-                                                <option value="{{$nhanhBo->mahoso}}">{{$nhanhBo->hoten}}</option>
-                                            @endforeach
-                                        </select>
-                                    </div>
-                                </div>
+                                <input name="nhanh-bo" type="hidden" value="{{$hoSo->mahoso}}">
                                 <div class="form-group row">
                                     <label for="example-text-input" class="col-4 col-form-label">Chọn nhánh mẹ</label>
                                     <div class="col-8">
                                         <select class="form-control" id="nhanh-me" name="nhanh-me">
-                                            {{--@foreach($dsNhanhBo as $nhanhBo)--}}
-                                            {{--<option value="{{$nhanhBo->mahoso}}">{{$nhanhBo->hoten}}</option>--}}
-                                            {{--@endforeach--}}
+                                            @foreach($dsVo as $vo)
+                                            <option value="{{$vo->mahoso}}">{{$vo->hoten}}</option>
+                                            @endforeach
                                         </select>
                                     </div>
                                 </div>

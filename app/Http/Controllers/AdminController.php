@@ -30,7 +30,7 @@ class AdminController extends Controller
                 $hoSoOng = HoSo::where('mahoso', $hoSoBo->mahsbo)->first();
             }
         }
-        $dsVo = VCHoSo::where('mahosovc',$hoSo->maHoSo)->get();
+        $dsVo = VCHoSo::where('mahosovc',$request->id)->get();
         $dsCon = HoSo::where('mahsbo', $request->id)->get();
         return view('admin.chi-tiet-ho-so', compact(['hoSo','hoSoBo','hoSoOng','dsVo','dsCon']));
     }
