@@ -65,4 +65,18 @@ class HoSoController extends Controller
 //echo $this->deQuyTimDoi($dsHoSo, 7);
 //echo $soDoi= isset($GLOBALS['soDoi'])?$GLOBALS['soDoi']:null;
 
+    protected function postCapNhatHoSo(Request $request, $maHoSo){
+//        echo "<pre>";
+//        print_r($request->all());
+//        echo "</pre>";
+        $hoSo = HoSo::where('mahoso', $maHoSo)->first();
+        $hoSo->email = $request->email;
+        $hoSo->gioitinh = $request->get('gioi-tinh')=='nam'?true:false ;
+        $hoSo->diachi = $request->get('diachi');
+        $hoSo->email = $request->email;
+        $hoSo->sdt = $request->sdt;
+        $hoSo->save();
+        return redirect()->back()->with('thongbao', "Tạo hồ sơ thành công");
+    }
+
 }

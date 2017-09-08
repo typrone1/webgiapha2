@@ -36,60 +36,6 @@
                         <div class="col-12">
                             <div class="multi-level card">
                                 {{inGiaPhaDangMenu($data, null)}}
-                                {{--<div class="item">--}}
-                                    {{--<input type="checkbox" id="A" checked/>--}}
-                                    {{--<img src="img/Arrow.png" class="arrow"><label for="A">Services</label>--}}
-
-                                    {{--<ul>--}}
-                                        {{--<li><a href="#">Branding</a></li>--}}
-                                        {{--<li><a href="#">Web/App Development</a></li>--}}
-                                        {{--<li><a href="#">Internet Marketing and SEO</a></li>--}}
-                                    {{--</ul>--}}
-                                {{--</div>--}}
-                                {{--<div class="item">--}}
-                                    {{--<input type="checkbox" id="B" checked />--}}
-                                    {{--<img src="img/Arrow.png" class="arrow"><label for="B">Jobs</label>--}}
-
-                                    {{--<ul>--}}
-                                        {{--<li>--}}
-                                            {{--<div class="sub-item">--}}
-                                                {{--<input type="checkbox" id="B-A" checked/>--}}
-                                                {{--<img src="img/Arrow.png" class="arrow"><label for="B-A">UI/UX</label>--}}
-
-                                                {{--<ul>--}}
-                                                    {{--<li><a href="#">UI/UX Designer</a></li>--}}
-                                                    {{--<li><a href="#">UI Designer</a></li>--}}
-                                                    {{--<li><a href="#">UX Designer</a></li>--}}
-                                                {{--</ul>--}}
-                                            {{--</div>--}}
-                                        {{--</li>--}}
-                                        {{--<li>--}}
-                                            {{--<div class="sub-item">--}}
-                                                {{--<input type="checkbox" id="B-B" checked/>--}}
-                                                {{--<img src="img/Arrow.png" class="arrow"><label for="B-B">Development</label>--}}
-
-                                                {{--<ul>--}}
-                                                    {{--<li><a href="#">Front end Developer</a></li>--}}
-                                                    {{--<li><a href="#">Back end Developer</a></li>--}}
-                                                {{--</ul>--}}
-
-                                            {{--</div>--}}
-                                        {{--</li>--}}
-                                        {{--<li><a href="#">Graphic Designer</a></li>--}}
-                                        {{--<li><a href="#">Logo Designer</a></li>--}}
-
-                                    {{--</ul>--}}
-                                {{--</div>--}}
-                                {{--<div class="item">--}}
-                                    {{--<input type="checkbox" id="C" checked/>--}}
-                                    {{--<img src="img/Arrow.png" class="arrow"><label for="C">About Us</label>--}}
-
-                                    {{--<ul>--}}
-                                        {{--<li><a href="#">Our Team</a></li>--}}
-                                        {{--<li><a href="#">Clients</a></li>--}}
-                                        {{--<li><a href="#">Our Work</a></li>--}}
-                                    {{--</ul>--}}
-                                {{--</div>--}}
                             </div>
                         </div>
                     </div>

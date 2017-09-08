@@ -8,7 +8,7 @@
                 </div>
 
                 <div class="col-md-3">
-                    <a href="index.html" class="btn btn-success btn-block"><i class="fa fa-check"></i> Lưu thay đổi</a>
+                    <button type="submit" form="thong-tin" value="Submit" class="btn btn-success btn-block"><i class="fa fa-check"></i> Lưu thay đổi</button>
                 </div>
                 <div class="col-md-3">
                     <a href="index.html" class="btn btn-danger btn-block"><i class="fa fa-remove"></i> Xóa hồ sơ</a>
@@ -23,80 +23,88 @@
             <div class="row">
 
                 <div class="col-md-9">
-                    <h5>{{ $hoSo->hoten }}</h5>
-                    <p>Đời thứ: {{$hoSo->doithu}} - Con thứ {{$hoSo->conthu}} </p>
-                    <hr>
-                    <div class="form-group row">
-                        <label for="example-text-input" class="col-md-2 col-form-label">Tên tự (Hiệu)</label>
-                        <div class="col-md-4">
-                            <input class="form-control" type="text" value="" id="example-text-input">
-                        </div>
-                        <label for="example-text-input" class="col-md-2 col-form-label">Tên thường gọi</label>
-                        <div class="col-md-4">
-                            <input class="form-control" type="text" value="" id="example-text-input">
-                        </div>
-                    </div>
-                    <div class="form-group row">
-                        <label for="example-text-input" class="col-md-2 col-form-label">Giới tính</label>
-                        <div class="col-md-10">
-                            <div class="form-check form-check-inline">
-                                <label class="form-check-label">
-                                    <input class="form-check-input" type="radio" name="gioi-tinh" id="gioi-tinh" value="nam" checked> Nam
-                                </label>
+                    <form action="{{ route('cap-nhat-ho-so', $hoSo->mahoso)}}" method="post" id="thong-tin">
+                        @if(Session::has('thongbao'))
+                            <div class="alert alert-success" role="alert">
+                                <strong>Cập nhật hồ sơ thành công!</strong>
                             </div>
-                            <div class="form-check form-check-inline">
-                                <label class="form-check-label">
-                                    @if($hoSo->gioitinh !== true)
-                                    <input class="form-check-input" type="radio" name="gioi-tinh" id="gioi-tinh" value="nu"> Nữ
-                                    @else
-                                    <input class="form-check-input" type="radio" name="gioi-tinh" id="gioi-tinh" value="nu" checked>
-                                    @endif
-                                </label>
+                        @endif
+                        <input type="hidden" name="_token" value="{{ csrf_token()}}"/>
+                        <h5>{{ $hoSo->hoten }}</h5>
+                        <p>Đời thứ: {{$hoSo->doithu}} - Con thứ {{$hoSo->conthu}} </p>
+                        <hr>
+                        <div class="form-group row">
+                            <label for="example-text-input" class="col-md-2 col-form-label">Tên tự (Hiệu)</label>
+                            <div class="col-md-4">
+                                <input class="form-control" type="text" value="" id="example-text-input">
+                            </div>
+                            <label for="example-text-input" class="col-md-2 col-form-label">Tên thường gọi</label>
+                            <div class="col-md-4">
+                                <input class="form-control" type="text" value="" id="example-text-input">
                             </div>
                         </div>
-                    </div>
-                    <div class="form-group row">
-                        <label for="example-text-input" class="col-md-2 col-form-label">Nơi ở</label>
-                        <div class="col-md-10">
-                            <input class="form-control" type="text" value="{{$hoSo->diachi}}" id="example-text-input">
-                        </div>
-                    </div>
-                    <div class="form-group row">
-                        <label for="example-text-input" class="col-md-2 col-form-label">Địa vị xã hội</label>
-                        <div class="col-md-4">
-                            <input class="form-control" type="text" value="" id="example-text-input">
-                        </div>
-                        <label for="example-text-input" class="col-md-2 col-form-label">Học hàm học vị</label>
-                        <div class="col-md-4">
-                            <input class="form-control" type="text" value="" id="example-text-input">
-                        </div>
-                    </div>
-                    <div class="form-group row">
-                        <label for="example-text-input" class="col-md-2 col-form-label">Địa chỉ Email:</label>
-                        <div class="col-md-10">
-                            <input class="form-control" type="text" value="{{$hoSo->email}}" id="example-text-input">
-                        </div>
-                    </div>
-                    <div class="form-group row">
-                        <label for="example-text-input" class="col-md-2 col-form-label">Số điện thoại:</label>
-                        <div class="col-md-10">
-                            <input class="form-control" type="text" value="{{$hoSo->sdt}}" id="example-text-input">
-                        </div>
-                    </div>
-                    <div class="bg-faded" style="border-radius: 5px;">
-                        <div class="container p-2">
-                            <div class="row">
-                                <div class="col-6">Ngày mất: {{$hoSo->ngaymat}}</div>
-                                <div class="col-6">Nơi mất: {{$hoSo->noimat}} </div>
+                        <div class="form-group row">
+                            <label for="example-text-input" class="col-md-2 col-form-label">Giới tính</label>
+                            <div class="col-md-10">
+                                <div class="form-check form-check-inline">
+                                    <label class="form-check-label">
+                                        <input class="form-check-input" type="radio" name="gioi-tinh" id="gioi-tinh" value="nam" checked> Nam
+                                    </label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <label class="form-check-label">
+                                        @if($hoSo->gioitinh !== true)
+                                        <input class="form-check-input" type="radio" name="gioi-tinh" id="gioi-tinh" value="nu"> Nữ
+                                        @else
+                                        <input class="form-check-input" type="radio" name="gioi-tinh" id="gioi-tinh" value="nu" checked>
+                                        @endif
+                                    </label>
+                                </div>
                             </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="example-text-input" class="col-md-2 col-form-label">Nơi ở</label>
+                            <div class="col-md-10">
+                                <input class="form-control" name="diachi" type="text" value="{{$hoSo->diachi}}" id="example-text-input">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="example-text-input" class="col-md-2 col-form-label">Địa vị xã hội</label>
+                            <div class="col-md-4">
+                                <input class="form-control" type="text" value="" id="example-text-input">
+                            </div>
+                            <label for="example-text-input" class="col-md-2 col-form-label">Học hàm học vị</label>
+                            <div class="col-md-4">
+                                <input class="form-control" type="text" value="" id="example-text-input">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="example-text-input"  class="col-md-2 col-form-label">Địa chỉ Email:</label>
+                            <div class="col-md-10">
+                                <input class="form-control" name="email" type="text" value="{{$hoSo->email}}" id="example-text-input">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="example-text-input"  class="col-md-2 col-form-label">Số điện thoại:</label>
+                            <div class="col-md-10">
+                                <input class="form-control" name="sdt" type="text" value="{{$hoSo->sdt}}" id="example-text-input">
+                            </div>
+                        </div>
+                        <div class="bg-faded" style="border-radius: 5px;">
+                            <div class="container p-2">
+                                <div class="row">
+                                    <div class="col-6">Ngày mất: {{$hoSo->ngaymat}}</div>
+                                    <div class="col-6">Nơi mất: {{$hoSo->noimat}} </div>
+                                </div>
 
-                            <div class="row">
-                                <div class="col-6">Ngày kỵ: 6/2/1999</div>
-                                <div class="col-6">Nơi an táng: </div>
-                                <div class="col-6">Người kỵ: </div>
+                                <div class="row">
+                                    <div class="col-6">Ngày kỵ: 6/2/1999</div>
+                                    <div class="col-6">Nơi an táng: </div>
+                                    <div class="col-6">Người kỵ: </div>
+                                </div>
                             </div>
                         </div>
-                    </div>
+                    </form>
                 </div>
                 <div class="col-md-3 mb-5">
                     <h3>Hình ảnh</h3>
@@ -175,7 +183,7 @@
                         <tr>
                             <td colspan="3" align="center" valign="middle">
                                 <div style=" width: 400px;text-align:center; vertical-align:middle; background: url({{asset('img/pattern.jpg')}})">Con: <br>
-                                    <span color="#FF0000">Đời thứ: 10 - Con thứ: 3</span><br><a href="#">{{ $hoSoOng->hoten }}</a></div>
+                                    <span style="color:#FF0000">Đời thứ: 10 - Con thứ: 3</span><br><a href="#">{{ $hoSoOng->hoten }}</a></div>
                             </td>
                         </tr>
                         <tr>
@@ -184,7 +192,7 @@
                         <tr>
                             <td colspan="3" align="center" valign="middle">
                                 <div style="width: 400px;  text-align:center; vertical-align:middle; background: url({{asset('img/pattern.jpg')}})">Con: <br>
-                                    <span color="#FF0000">Đời thứ: 10 - Con thứ: 3</span><br><a href="#">{{ $hoSoBo->hoten }}</a></div>
+                                    <span style="color:#FF0000">Đời thứ: 10 - Con thứ: 3</span><br><a href="#">{{ $hoSoBo->hoten }}</a></div>
                             </td>
                         </tr>
                         <tr>
@@ -198,14 +206,14 @@
                                         <td width="50%" align="center" valign="top" style="vertical-align:middle; background: url({{asset('img/pattern.jpg')}})">
                                             <div align="center" style="background-color:#FFFFFF"><img src="{{asset('img/down.gif')}}"></div>
                                             <div style="text-align:center; vertical-align:middle; position: relative">Con: <br>
-                                                <span color="#FF0000">Đời thứ: 10 - Con thứ: 3</span><br><a href="#">{{ $hoSo->hoten }}</a>
+                                                <span style="color:#FF0000">Đời thứ: 10 - Con thứ: 3</span><br><a href="#">{{ $hoSo->hoten }}</a>
                                                 <div style="position: absolute; right: 0; top: 0; height: 100%; width: 1px; background-color: #fff "></div>
                                             </div>
                                         </td>
                                         <td width="50%" align="center" valign="top" style="vertical-align:middle; background: url({{asset('img/pattern.jpg')}})">
                                             <div align="center" style="background-color:#FFFFFF"><img src="{{asset('img/down.gif')}}"></div>
                                             <div style="text-align:center; vertical-align:middle; position: relative">Con: <br>
-                                                <span color="#FF0000">Đời thứ: 10 - Con thứ: 3</span><br><a href="#">Trần Hưng Hân</a>
+                                                <span style="color:#FF0000">Đời thứ: 10 - Con thứ: 3</span><br><a href="#">Trần Hưng Hân</a>
                                                 <div style="position: absolute; right: 0; top: 0; height: 100%; width: 1px; background-color: #fff "></div>
                                             </div>
                                         </td>
@@ -230,16 +238,14 @@
                                     <tbody>
 
                                     @foreach($dsCon as $con)
-                                    <td width="{{$percent}}%" align="center" valign="top" style="vertical-align:middle; float: left; background: url({{asset('img/pattern.jpg')}})">
+                                    <td width="{{$percent}}%" align="center" valign="top" style="vertical-align:middle; height: 200px; float: left; background: url({{asset('img/pattern.jpg')}})">
                                         <div align="center" style="background-color:#FFFFFF"><img src="{{asset('img/down.gif')}}"></div>
-                                        <div style="text-align:center; vertical-align:middle; position: relative">Con: <br>
-                                            <span color="#FF0000">Đời thứ: 10 - Con thứ: 3</span><br><a href="#">{{$con->hoten}}</a>
+                                        <div style="text-align:center; vertical-align:middle; position: relative; height: 100%">Con: <br>
+                                            <span style="color:#FF0000">Đời thứ: 10 - Con thứ: 3</span><br><a href="#">{{$con->hoten}}</a>
                                             <div style="position: absolute; right: 0; top: 0; height: 100%; width: 1px; background-color: #fff "></div>
                                         </div>
                                     </td>
                                     @endforeach
-
-
                                     </tbody>
                                 </table>
                             </td>
