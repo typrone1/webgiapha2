@@ -87,13 +87,13 @@ label {
 .multi-level ul,
 .multi-level li,
 label {
-    /*line-height: 50px;*/
+    line-height: 50px;
     margin: 0;
     padding: 0 2em;
     list-style: none;
     text-decoration: none;
-    /*color: #90A4AE;*/
-    /*font-weight: 100;*/
+    color: #90A4AE;
+    font-weight: 100;
     width: 100%;
 }
 
@@ -107,9 +107,13 @@ label {
     padding: 0 4em;
     list-style: none;
     text-decoration: none;
-    /*color: #90A4AE;*/
-    /*font-weight: 100;*/
+    color: #90A4AE;
+    font-weight: 100;
 }
+
+
+
+
 
 .tree {
     width: 2500px;

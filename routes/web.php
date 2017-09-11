@@ -15,7 +15,7 @@ Route::get('/', function () {
     return redirect()->route('dashboard');
 });
 
-Route::get('admin', 'AdminController@index')->name('dashboard');
+Route::get('admin', 'AdminController@index')->name('dashboard')->middleware('auth');;
 Route::get('quan-ly-ho-so', 'AdminController@getQuanLyHoSo')->name('quan-ly-ho-so');
 Route::get('tim-kiem-ho-so', 'AdminController@getTimKiemHoSo')->name('tim-kiem');
 Route::get('chi-tiet-ho-so/{id}', 'AdminController@getChiTietHoSo')->name('chi-tiet-ho-so');
@@ -26,4 +26,6 @@ Route::get('so-do-gia-pha', 'UserController@getSoDoGiaPha')->name('so-do-gia-pha
 Route::get('them-ho-so', 'AdminController@getThemHoSo')->name('them-ho-so');
 Route::post('post-them-ho-so', 'HoSoController@postDangKyHoSo')->name('post-them-ho-so');
 Route::post('cap-nhat-ho-so/{id}', 'HoSoController@postCapNhatHoSo')->name('cap-nhat-ho-so');
-Route::get('test','HoSoController@test');
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

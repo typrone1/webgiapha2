@@ -187,8 +187,11 @@
                 <div class="col-12">
                     <table width="100%" border="0" cellpadding="0" cellspacing="0">
                         <tbody>
+                        @if(isset($hoSoOng))
                         <tr>
+
                             <td colspan="3" align="center" valign="middle">
+
                                 <div style=" width: 400px;text-align:center; vertical-align:middle; background: url({{asset('img/pattern.jpg')}})">Con: <br>
                                     <span style="color:#FF0000">Đời thứ: 10 - Con thứ: 3</span><br><a href="#">{{ $hoSoOng->hoten }}</a></div>
                             </td>
@@ -196,6 +199,8 @@
                         <tr>
                             <td colspan="3" height="10" align="center" valign="middle"><img src="{{asset('img/down.gif')}}"></td>
                         </tr>
+                        @endif
+                        @if(isset($hoSoBo))
                         <tr>
                             <td colspan="3" align="center" valign="middle">
                                 <div style="width: 400px;  text-align:center; vertical-align:middle; background: url({{asset('img/pattern.jpg')}})">Con: <br>
@@ -205,6 +210,7 @@
                         <tr>
                             <td colspan="3" height="10" align="center" valign="middle"><img src="{{asset('img/down.gif')}}"></td>
                         </tr>
+                        @endif
                         <tr>
                             <td colspan="3" align="center" style="position: relative"><img src="{{asset('img/VLine.jpg')}}" width="50%" height="1px" style="position: absolute; left: 25%">
                                 <table width="100%" border="0" cellspacing="0" cellpadding="0">
