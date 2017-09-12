@@ -3,6 +3,8 @@
 use Illuminate\Database\Seeder;
 use App\HoToc;
 use App\HoSo;
+use App\BaiViet;
+use App\ViecToc;
 class DatabaseSeeder extends Seeder
 {
     /**
@@ -12,7 +14,7 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        // $this->call(UsersTableSeeder::class);
+//        $this->call(UsersTableSeeder::class);
         $hoToc = HoToc::create(['tenhotoc'=>'Tộc Họ Nguyễn']);
         $hoSo = HoSo::create([
             'mahotoc' => 1,
@@ -139,6 +141,34 @@ class DatabaseSeeder extends Seeder
             'diachi' => 'Lorem Ipsum',
             'nguoiky' => 'Ông A',
             'damat' => true
+        ]);
+
+        $viectoc = ViecToc::create([
+            'ngaydienra' => '2017-09-12',
+            'tensukien' => 'Hội họp',
+            'noidung' => 'Hội họp',
+        ]);
+
+        $viectoc = ViecToc::create([
+            'ngaydienra' => '2017-09-12',
+            'tensukien' => 'Hội họp 1',
+            'noidung' => 'Hội họp 1',
+        ]);
+        $viectoc = ViecToc::create([
+            'ngaydienra' => '2017-09-12',
+            'tensukien' => 'Hội họp 2',
+            'noidung' => 'Hội họp 2',
+        ]);
+
+        $danhMuc = \App\Category::create([
+            'tendanhmuc' => 'Tin tức',
+            'mota' => 'abcxzy'
+        ]);
+
+        $baiViet = BaiViet::create([
+            'madanhmuc' => 1,
+            'tieude' => 'Xin chào',
+            'noidung' => 'Lorem Ipsum'
         ]);
 
     }

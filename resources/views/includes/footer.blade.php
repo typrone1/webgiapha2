@@ -14,5 +14,9 @@
 <script src="{{asset('js/jquery-3.2.1.js')}}"></script>
 <script src="{{asset('tether/tether.min.js')}}"></script>
 <script src="{{asset('js/bootstrap.min.js')}}"></script>
+<script src="https://cdn.ckeditor.com/4.7.1/standard/ckeditor.js"></script>
+<script>
+    CKEDITOR.replace('editor1');
+</script>
 </body>
 </html>

@@ -38,10 +38,10 @@
                     <a class="nav-link" href="{{route('so-do-gia-pha')}}"> Xem cây gia phả </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link"> Xem lịch việc tộc </a>
+                    <a class="nav-link" href="{{ route('quan-ly-viec-toc') }}"> Xem lịch việc tộc </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link"> Giới thiệu </a>
+                    <a class="nav-link" href="{{ route('tin-tuc') }}"> Tin tức sự kiện </a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link"> Tìm kiếm </a>

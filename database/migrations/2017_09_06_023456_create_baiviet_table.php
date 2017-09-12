@@ -17,6 +17,7 @@ class CreateBaivietTable extends Migration
             $table->increments('mabaiviet');
             $table->integer('madanhmuc')->unsigned();
             $table->foreign('madanhmuc')->references('madanhmuc')->on('danhmuc');
+            $table->string('hinhanh')->nullable();
             $table->string('tieude');
             $table->text('noidung');
             $table->timestamps();
