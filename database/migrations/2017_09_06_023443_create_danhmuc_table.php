@@ -16,7 +16,7 @@ class CreateDanhmucTable extends Migration
         Schema::create('danhmuc', function (Blueprint $table) {
             $table->increments('madanhmuc');
             $table->string('tendanhmuc');
-            $table->string('mota');
+            $table->text('mota');
             $table->timestamps();
         });
     }

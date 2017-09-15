@@ -73,7 +73,7 @@
                                             <td>{{$viecToc->tensukien}}</td>
                                             <td>{{$viecToc->noidung}}</td>
                                             <td>{{$viecToc->created_at}}</td>
-                                            <td><a class="btn btn-danger" href="#">Xóa</a></td>
+                                            <td><a class="btn btn-danger" href="{{route('xoa-viec-toc',$viecToc->maviectoc)}}">Xóa</a></td>
                                         </tr>
                                     @endforeach
                                     </tbody>
@@ -123,7 +123,8 @@
                                             <td>{{$baiViet->tieude}}</td>
                                             <td>Admin</td>
                                             <td>{{$baiViet->created_at}}</td>
-                                            <td><a class="btn btn-secondary" href="{{route('chinh-sua-bai-viet', $baiViet->mabaiviet)}}"><i class="fa fa-angle-double-right"></i>Chi tiết</a><a class="btn btn-danger" href="#">Xóa</a></td>
+                                            <td><a class="btn btn-secondary" href="{{route('chinh-sua-bai-viet', $baiViet->mabaiviet)}}"><i class="fa fa-angle-double-right"></i>Chi tiết</a>
+                                                <a class="btn btn-danger" href="{{route('xoa-bai-viet',$baiViet->mabaiviet)}}">Xóa</a></td>
                                         </tr>
                                     @endforeach
                                     </tbody>
@@ -146,24 +147,24 @@
                     <div class="card text-center card-primary text-white mb-3">
                         <div class="card-block">
                             <h3>Việc</h3>
-                            <h1 class="display-4"><i class="fa fa-pencil"></i> 6</h1>
-                            <a href="posts.html" class="btn btn-sm btn-outline-secondary text-white">Việc</a>
+                            <h1 class="display-4"><i class="fa fa-pencil"></i> {{$dsViecToc->count()}}</h1>
+                            <a class="btn btn-sm btn-outline-secondary text-white">Việc</a>
                         </div>
                     </div>
 
                     <div class="card text-center card-success text-white mb-3">
                         <div class="card-block">
                             <h3>Danh mục</h3>
-                            <h1 class="display-4"><i class="fa fa-folder-open-o"></i> 4</h1>
-                            <a href="categories.html" class="btn btn-sm btn-outline-secondary text-white">Danh mục</a>
+                            <h1 class="display-4"><i class="fa fa-folder-open-o"></i> {{$dsDanhMuc->count()}}</h1>
+                            <a class="btn btn-sm btn-outline-secondary text-white">Danh mục</a>
                         </div>
                     </div>
 
                     <div class="card text-center card-success text-white mb-3">
                         <div class="card-block">
                             <h3>Bài viết</h3>
-                            <h1 class="display-4"><i class="fa fa-youtube-play"></i> 4</h1>
-                            <a href="categories.html" class="btn btn-sm btn-outline-secondary text-white">Bài viết</a>
+                            <h1 class="display-4"><i class="fa fa-youtube-play"></i> {{$dsBaiViet->count()}}</h1>
+                            <a class="btn btn-sm btn-outline-secondary text-white">Bài viết</a>
                         </div>
                     </div>
                 </div>

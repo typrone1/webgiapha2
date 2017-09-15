@@ -50,6 +50,14 @@ class ViecTocController extends Controller
     }
 
     protected function getChinhSuaBaiViet($id){
-        return view('admin.chi-tiet-bai-viet');
+        $baiViet = BaiViet::where('mabaiviet', $id)->first();
+        $dsDanhMuc = Category::all();
+        return view('admin.chi-tiet-bai-viet', compact('baiViet','dsDanhMuc'));
+    }
+
+    protected function xoaViecToc($id){
+        $viecToc = ViecToc::find($id);
+        $viecToc->delete();
+        return redirect()->back();
     }
 }
