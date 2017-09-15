@@ -13,6 +13,9 @@ class VCHoSoController extends Controller
         return view('admin.them-vo', compact('hoSo'));
     }
     protected function postThemVo(Request $request, $idChong){
+        echo "<pre>";
+        print_r($request->all());
+        echo "</pre>";
         $hsVC = new VCHoSo();
         $hsVC->mahosovc = $idChong;
         $hsVC->hoten = $request->get('ho-ten');
@@ -22,8 +25,8 @@ class VCHoSoController extends Controller
         $hsVC->conthu = $request->get('con-thu');
         $hsVC->email = $request->get('email');
         $hsVC->sdt = $request->get('sdt');
-        $hsVC->hotenbo = $request->get('ho-ten-bo');
-        $hsVC->hotenme = $request->get('ho-ten-me');
+        $hsVC->hotenbo = "Chờ cập nhật...";
+        $hsVC->hotenme = "Chờ cập nhật...";
         $hsVC->nghenghiep = $request->get('nghe-nghiep');
         if ($hsVC->save()){
             return redirect()->back()->with('thongbao', "Thêm vợ thành công!");

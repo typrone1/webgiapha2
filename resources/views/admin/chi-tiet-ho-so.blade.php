@@ -94,7 +94,7 @@
                             <div class="container p-2">
                                 <div class="row">
                                     <div class="col-6">Ngày mất: {{$hoSo->ngaymat}}</div>
-                                        <div class="col-6">Nơi mất: {{$hoSo->noimat}} </div>
+                                    <div class="col-6">Nơi mất: {{$hoSo->noimat}} </div>
                                 </div>
 
                                 <div class="row">
@@ -192,7 +192,7 @@
 
                             <td colspan="3" align="center" valign="middle">
 
-                                <div style=" width: 400px;text-align:center; vertical-align:middle; background: url({{asset('img/pattern.jpg')}})">Ông nội: <br>
+                                <div style=" width: 400px;text-align:center; vertical-align:middle; background: url({{asset('img/pattern.jpg')}})">Con: <br>
                                     <span style="color:#FF0000">Đời thứ: 10 - Con thứ: 3</span><br><a href="#">{{ $hoSoOng->hoten }}</a></div>
                             </td>
                         </tr>
@@ -203,7 +203,7 @@
                         @if(isset($hoSoBo))
                         <tr>
                             <td colspan="3" align="center" valign="middle">
-                                <div style="width: 400px;  text-align:center; vertical-align:middle; background: url({{asset('img/pattern.jpg')}})">Bố: <br>
+                                <div style="width: 400px;  text-align:center; vertical-align:middle; background: url({{asset('img/pattern.jpg')}})">Con: <br>
                                     <span style="color:#FF0000">Đời thứ: 10 - Con thứ: 3</span><br><a href="#">{{ $hoSoBo->hoten }}</a></div>
                             </td>
                         </tr>
@@ -218,14 +218,14 @@
                                     <tr>
                                         <td width="50%" align="center" valign="top" style="vertical-align:middle; background: url({{asset('img/pattern.jpg')}})">
                                             <div align="center" style="background-color:#FFFFFF"><img src="{{asset('img/down.gif')}}"></div>
-                                            <div style="text-align:center; vertical-align:middle; position: relative">Anh em: <br>
+                                            <div style="text-align:center; vertical-align:middle; position: relative">Con: <br>
                                                 <span style="color:#FF0000">Đời thứ: 10 - Con thứ: 3</span><br><a href="#">{{ $hoSo->hoten }}</a>
                                                 <div style="position: absolute; right: 0; top: 0; height: 100%; width: 1px; background-color: #fff "></div>
                                             </div>
                                         </td>
                                         <td width="50%" align="center" valign="top" style="vertical-align:middle; background: url({{asset('img/pattern.jpg')}})">
                                             <div align="center" style="background-color:#FFFFFF"><img src="{{asset('img/down.gif')}}"></div>
-                                            <div style="text-align:center; vertical-align:middle; position: relative">Anh em: <br>
+                                            <div style="text-align:center; vertical-align:middle; position: relative">Con: <br>
                                                 <span style="color:#FF0000">Đời thứ: 10 - Con thứ: 3</span><br><a href="#">Trần Hưng Hân</a>
                                                 <div style="position: absolute; right: 0; top: 0; height: 100%; width: 1px; background-color: #fff "></div>
                                             </div>
@@ -242,10 +242,6 @@
                         <tr>
                             <?php
                             $count = $dsCon->count();
-                            if ($count == 0){
-                                $count=1;
-                            }
-
                             $percent = 100/$count;
                             $linePercent = (100/$count);
                             $marginPercent = $linePercent/2;

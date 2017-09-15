@@ -20,13 +20,13 @@ class DatabaseSeeder extends Seeder
             'mahotoc' => 1,
             'mahsbo' => null,
             'mahsme' => null,
-            'hoten' => 'Nguyễn Văn Nhất',
+            'hoten' => 'Nguyễn Văn Trưởng',
             'ngaysinh' => '1950-08-20',
             'gioitinh' => true,
             'doithu' => 1,
             'conthu' => 1,
-            'quequan' => 'Lorem ipsum',
-            'diachi' => 'Lorem ipsum',
+            'quequan' => 'Lorem Ipsum',
+            'diachi' => 'Lorem Ipsum',
             'nguoiky' => 'Ông A',
             'damat' => true
         ]);
@@ -34,13 +34,13 @@ class DatabaseSeeder extends Seeder
             'mahotoc' => 1,
             'mahsbo' => 1,
             'mahsme' => null,
-            'hoten' => 'Nguyễn Văn Nhì',
+            'hoten' => 'Nguyễn Văn Phó',
             'ngaysinh' => '1950-08-20',
             'gioitinh' => true,
             'doithu' => 1,
             'conthu' => 1,
-            'quequan' => 'Lorem ipsum',
-            'diachi' => 'Lorem ipsum',
+            'quequan' => 'Lorem Ipsum',
+            'diachi' => 'Lorem Ipsum',
             'nguoiky' => 'Ông A',
             'damat' => true
         ]);
@@ -53,8 +53,8 @@ class DatabaseSeeder extends Seeder
             'gioitinh' => true,
             'doithu' => 1,
             'conthu' => 1,
-            'quequan' => 'Lorem ipsum',
-            'diachi' => 'Lorem ipsum',
+            'quequan' => 'Lorem Ipsum',
+            'diachi' => 'Lorem Ipsum',
             'nguoiky' => 'Ông A',
             'damat' => true
         ]);
@@ -62,13 +62,13 @@ class DatabaseSeeder extends Seeder
             'mahotoc' => 1,
             'mahsbo' => null,
             'mahsme' => null,
-            'hoten' => 'Nguyễn Văn Tứ',
+            'hoten' => 'Nguyễn Văn Nhì Hai',
             'ngaysinh' => '1950-08-20',
             'gioitinh' => true,
             'doithu' => 1,
             'conthu' => 1,
-            'quequan' => 'Lorem ipsum',
-            'diachi' => 'Lorem ipsum',
+            'quequan' => 'Lorem Ipsum',
+            'diachi' => 'Lorem Ipsum',
             'nguoiky' => 'Ông A',
             'damat' => true
         ]);
@@ -76,13 +76,13 @@ class DatabaseSeeder extends Seeder
             'mahotoc' => 1,
             'mahsbo' => 4,
             'mahsme' => null,
-            'hoten' => 'Nguyễn Con Ngũ',
+            'hoten' => 'Nguyễn Con Nhì Hai',
             'ngaysinh' => '1950-08-20',
             'gioitinh' => true,
             'doithu' => 1,
             'conthu' => 1,
-            'quequan' => 'Lorem ipsum',
-            'diachi' => 'Lorem ipsum',
+            'quequan' => 'Lorem Ipsum',
+            'diachi' => 'Lorem Ipsum',
             'nguoiky' => 'Ông A',
             'damat' => true
         ]);
@@ -90,13 +90,13 @@ class DatabaseSeeder extends Seeder
             'mahotoc' => 1,
             'mahsbo' => 2,
             'mahsme' => null,
-            'hoten' => 'Nguyễn Văn Lục',
+            'hoten' => 'Nguyễn Văn Trưởng',
             'ngaysinh' => '1950-08-20',
             'gioitinh' => true,
             'doithu' => 1,
             'conthu' => 1,
-            'quequan' => 'Lorem ipsum',
-            'diachi' => 'Lorem ipsum',
+            'quequan' => 'Lorem Ipsum',
+            'diachi' => 'Lorem Ipsum',
             'nguoiky' => 'Ông A',
             'damat' => true
         ]);
@@ -104,13 +104,13 @@ class DatabaseSeeder extends Seeder
             'mahotoc' => 1,
             'mahsbo' => 3,
             'mahsme' => null,
-            'hoten' => 'Nguyễn Văn Thất',
+            'hoten' => 'Nguyễn Văn Trưởng',
             'ngaysinh' => '1950-08-20',
             'gioitinh' => true,
             'doithu' => 1,
             'conthu' => 1,
-            'quequan' => 'Lorem ipsum',
-            'diachi' => 'Lorem ipsum',
+            'quequan' => 'Lorem Ipsum',
+            'diachi' => 'Lorem Ipsum',
             'nguoiky' => 'Ông A',
             'damat' => true
         ]);
@@ -118,13 +118,13 @@ class DatabaseSeeder extends Seeder
             'mahotoc' => 1,
             'mahsbo' => 4,
             'mahsme' => null,
-            'hoten' => 'Nguyễn Văn Bát',
+            'hoten' => 'Nguyễn Văn Trưởng',
             'ngaysinh' => '1950-08-20',
             'gioitinh' => true,
             'doithu' => 1,
             'conthu' => 1,
-            'quequan' => 'Lorem ipsum',
-            'diachi' => 'Lorem ipsum',
+            'quequan' => 'Lorem Ipsum',
+            'diachi' => 'Lorem Ipsum',
             'nguoiky' => 'Ông A',
             'damat' => true
         ]);
@@ -132,143 +132,43 @@ class DatabaseSeeder extends Seeder
             'mahotoc' => 1,
             'mahsbo' => 5,
             'mahsme' => null,
-            'hoten' => 'Nguyễn Văn Cửu',
+            'hoten' => 'Nguyễn Văn Trưởng',
             'ngaysinh' => '1950-08-20',
             'gioitinh' => true,
             'doithu' => 1,
             'conthu' => 1,
-            'quequan' => 'Lorem ipsum',
-            'diachi' => 'Lorem ipsum',
+            'quequan' => 'Lorem Ipsum',
+            'diachi' => 'Lorem Ipsum',
             'nguoiky' => 'Ông A',
             'damat' => true
         ]);
-        $hoSo = HoSo::create([
-            'mahotoc' => 1,
-            'mahsbo' => 6,
-            'mahsme' => null,
-            'hoten' => 'Nguyễn Văn Thập',
-            'ngaysinh' => '1950-08-20',
-            'gioitinh' => true,
-            'doithu' => 1,
-            'conthu' => 1,
-            'quequan' => 'Lorem ipsum',
-            'diachi' => 'Lorem ipsum',
-            'nguoiky' => 'Ông A',
-            'damat' => true
-        ]);
-        $hoSo = HoSo::create([
-            'mahotoc' => 1,
-            'mahsbo' => 10,
-            'mahsme' => null,
-            'hoten' => 'Nguyễn Văn Thập Nhất',
-            'ngaysinh' => '1950-08-20',
-            'gioitinh' => true,
-            'doithu' => 1,
-            'conthu' => 1,
-            'quequan' => 'Lorem ipsum',
-            'diachi' => 'Lorem ipsum',
-            'nguoiky' => 'Ông A',
-            'damat' => true
-        ]);
-        $hoSo = HoSo::create([
-            'mahotoc' => 1,
-            'mahsbo' => 10,
-            'mahsme' => null,
-            'hoten' => 'Nguyễn Văn Thập Nhì',
-            'ngaysinh' => '1950-08-20',
-            'gioitinh' => true,
-            'doithu' => 1,
-            'conthu' => 1,
-            'quequan' => 'Lorem ipsum',
-            'diachi' => 'Lorem ipsum',
-            'nguoiky' => 'Ông A',
-            'damat' => true
-        ]);
-        $hoSo = HoSo::create([
-            'mahotoc' => 1,
-            'mahsbo' => 10,
-            'mahsme' => null,
-            'hoten' => 'Nguyễn Văn Thập Tam',
-            'ngaysinh' => '1950-08-20',
-            'gioitinh' => true,
-            'doithu' => 1,
-            'conthu' => 1,
-            'quequan' => 'Lorem ipsum',
-            'diachi' => 'Lorem ipsum',
-            'nguoiky' => 'Ông A',
-            'damat' => true
-        ]);
+
         $viectoc = ViecToc::create([
             'ngaydienra' => '2017-09-12',
             'tensukien' => 'Hội họp',
-            'noidung' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-proident, sunt in culpa qui officia deserunt mollit anim id est laborum',
+            'noidung' => 'Hội họp',
         ]);
 
         $viectoc = ViecToc::create([
             'ngaydienra' => '2017-09-12',
             'tensukien' => 'Hội họp 1',
-            'noidung' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+            'noidung' => 'Hội họp 1',
         ]);
         $viectoc = ViecToc::create([
             'ngaydienra' => '2017-09-12',
             'tensukien' => 'Hội họp 2',
-            'noidung' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+            'noidung' => 'Hội họp 2',
         ]);
 
         $danhMuc = \App\Category::create([
             'tendanhmuc' => 'Tin tức',
-            'mota' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'
+            'mota' => 'abcxzy'
         ]);
 
         $baiViet = BaiViet::create([
             'madanhmuc' => 1,
-            'tieude' => 'Thông báo toàn thể gia tộc',
-            'noidung' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'
-        ]);
-        $baiViet = BaiViet::create([
-            'madanhmuc' => 1,
-            'tieude' => 'Thông báo về việc cử hành lễ thành hôn của con cháu',
-            'noidung' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'
-        ]);
-        $baiViet = BaiViet::create([
-            'madanhmuc' => 1,
-            'tieude' => 'Thông báo về việc cử hành lễ thành hôn của con cháu',
-            'noidung' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'
+            'tieude' => 'Xin chào',
+            'noidung' => 'Lorem Ipsum'
         ]);
 
     }
