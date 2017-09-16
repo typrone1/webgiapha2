@@ -18,7 +18,7 @@
                         <div class="card-block">
                             <h4 class="text-center">Ảnh hiển thị</h4>
                             <hr>
-                            <img src="img/avatar.png" class="img-thumbnail" alt="">
+                            <img src="{{asset('img/avatar.png')}}" class="img-thumbnail" alt="">
                             <div class="form-group">
                                 <label for="exampleInputFile">Chọn đường dẫn</label>
                                 <input type="file" class="form-control-file  w-100" id="exampleInputFile" aria-describedby="fileHelp">
@@ -30,7 +30,7 @@
 
                 <div class="col-md-8">
                     <div class="card p-4">
-                        <form action="{{route('post-them-ho-so')}}" method="post">
+                        <form action="{{route('post-them-vo', $hoSo->mahoso)}}" method="post">
                             <input type="hidden" name="_token" value="{{ csrf_token()}}"/>
                             <div class="card-block">
                                 <h3 class="text-center">Thông tin cá nhân</h3>
@@ -40,26 +40,26 @@
                                     </div>
                                 @endif
                                 <hr>
-                                <div class="form-group row">
-                                    <label for="example-text-input" class="col-4 col-form-label">Chọn nhánh bố</label>
-                                    <div class="col-8">
-                                        <select class="form-control" id="nhanh-bo" name="nhanh-bo">
-                                            @foreach($dsNhanhBo as $nhanhBo)
-                                                <option value="{{$nhanhBo->mahoso}}">{{$nhanhBo->hoten}}</option>
-                                            @endforeach
-                                        </select>
-                                    </div>
-                                </div>
-                                <div class="form-group row">
-                                    <label for="example-text-input" class="col-4 col-form-label">Chọn nhánh mẹ</label>
-                                    <div class="col-8">
-                                        <select class="form-control" id="nhanh-me" name="nhanh-me">
+                                {{--<div class="form-group row">--}}
+                                    {{--<label for="example-text-input" class="col-4 col-form-label">Chọn nhánh bố</label>--}}
+                                    {{--<div class="col-8">--}}
+                                        {{--<select class="form-control" id="nhanh-bo" name="nhanh-bo">--}}
+                                            {{--@foreach($dsNhanhBo as $nhanhBo)--}}
+                                                {{--<option value="{{$nhanhBo->mahoso}}">{{$nhanhBo->hoten}}</option>--}}
+                                            {{--@endforeach--}}
+                                        {{--</select>--}}
+                                    {{--</div>--}}
+                                {{--</div>--}}
+                                {{--<div class="form-group row">--}}
+                                    {{--<label for="example-text-input" class="col-4 col-form-label">Chọn nhánh mẹ</label>--}}
+                                    {{--<div class="col-8">--}}
+                                        {{--<select class="form-control" id="nhanh-me" name="nhanh-me">--}}
                                             {{--@foreach($dsNhanhBo as $nhanhBo)--}}
                                             {{--<option value="{{$nhanhBo->mahoso}}">{{$nhanhBo->hoten}}</option>--}}
                                             {{--@endforeach--}}
-                                        </select>
-                                    </div>
-                                </div>
+                                        {{--</select>--}}
+                                    {{--</div>--}}
+                                {{--</div>--}}
                                 <div class="form-group row">
                                     <label for="example-text-input" class="col-4 col-form-label">Họ và tên</label>
                                     <div class="col-8">
