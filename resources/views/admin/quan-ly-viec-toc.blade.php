@@ -73,7 +73,7 @@
                                             <td>{{$viecToc->tensukien}}</td>
                                             <td>{{$viecToc->noidung}}</td>
                                             <td>{{$viecToc->created_at}}</td>
-                                            <td><a class="btn btn-danger" href="#">Xóa</a></td>
+                                            <td><a class="btn btn-danger" href="{{route('xoa-viec-toc',$viecToc->maviectoc)}}">Xóa</a></td>
                                         </tr>
                                     @endforeach
                                     </tbody>
@@ -123,7 +123,8 @@
                                             <td>{{$baiViet->tieude}}</td>
                                             <td>Admin</td>
                                             <td>{{$baiViet->created_at}}</td>
-                                            <td><a class="btn btn-secondary" href="{{route('chinh-sua-bai-viet', $baiViet->mabaiviet)}}"><i class="fa fa-angle-double-right"></i>Chi tiết</a><a class="btn btn-danger" href="#">Xóa</a></td>
+                                            <td><a class="btn btn-secondary" href="{{route('chinh-sua-bai-viet', $baiViet->mabaiviet)}}"><i class="fa fa-angle-double-right"></i>Chi tiết</a>
+                                                <a class="btn btn-danger" href="{{route('xoa-bai-viet',$baiViet->mabaiviet)}}">Xóa</a></td>
                                         </tr>
                                     @endforeach
                                     </tbody>

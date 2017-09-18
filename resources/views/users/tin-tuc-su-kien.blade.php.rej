@@ -1,0 +1,13 @@
+diff a/resources/views/users/tin-tuc-su-kien.blade.php b/resources/views/users/tin-tuc-su-kien.blade.php	(rejected hunks)
+@@ -30,10 +30,9 @@
+         <div class="container">
+             <div class="row">
+                 <div class="col-sm-12 col-md-8">
+-                    @foreach($dsBaiViet as $baiViet)
+                     <div class="row mb-2">
+                         <div class="container p-3 bg-faded">
+-                            <h4>{{$baiViet->tieude}}</h4>
++                            <h4>Blog Post One</h4>
+                             <div class="row">
+                                 <div class="col-6">
+                                     <div style="height: 260px; overflow: hidden">

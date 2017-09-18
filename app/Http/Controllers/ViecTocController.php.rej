@@ -1,0 +1,12 @@
+diff a/app/Http/Controllers/ViecTocController.php b/app/Http/Controllers/ViecTocController.php	(rejected hunks)
+@@ -50,9 +50,6 @@
+     }
+ 
+     protected function getChinhSuaBaiViet($id){
+-    protected function xoaViecToc($id){
+-        $viecToc = ViecToc::find($id);
+-        $viecToc->delete();
+-        return redirect()->back();
++        return view('admin.chi-tiet-bai-viet');
+     }
+ }

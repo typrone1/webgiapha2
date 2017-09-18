@@ -8,7 +8,7 @@
                 </div>
 
                 <div class="col-md-3">
-                    <a href="index.html" class="btn btn-success btn-block"><i class="fa fa-check"></i> Save Changes</a>
+                    <button href="index.html" class="btn btn-success btn-block" type="submit" form="baiviet"><i class="fa fa-check"></i> Save Changes</button>
                 </div>
                 <div class="col-md-3">
                     <a href="index.html" class="btn btn-danger btn-block"><i class="fa fa-remove"></i> Delete Post</a>
@@ -27,18 +27,18 @@
                             <h4>Edit Post</h4>
                         </div>
                         <div class="card-block">
-                            <form>
+                            <form action="{{route('cap-nhat-bai-viet',$baiViet->mabaiviet)}}" method="post" id="baiviet">
+                                <input type="hidden" name="_token" value="{{ csrf_token()}}"/>
                                 <div class="form-group">
                                     <label for="title" class="form-control-label">Title</label>
-                                    <input type="text" class="form-control" value="Post One">
+                                    <input type="text" class="form-control" name="tieude" value="{{$baiViet->tieude}}">
                                 </div>
                                 <div class="form-group">
                                     <label for="category" class="form-control-label">Category</label>
-                                    <select class="form-control">
-                                        <option value="" selected>Web Development</option>
-                                        <option value="">Tech Gadgets</option>
-                                        <option value="">Business</option>
-                                        <option value="">Health & Wellness</option>
+                                    <select class="form-control" name="madanhmuc">
+                                    @foreach($dsDanhMuc as $danhMuc)
+                                        <option value="{{$danhMuc->madanhmuc}}" @if($danhMuc->madanhmuc == $baiViet->madanhmuc) selected @endif>{{$danhMuc->tendanhmuc }}</option>
+                                    @endforeach
                                     </select>
                                 </div>
                                 <div class="form-group bg-faded p-3">
@@ -50,7 +50,7 @@
                                 </div>
                                 <div class="form-group">
                                     <label for="body">Body</label>
-                                    <textarea name="editor1" class="form-control">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatum provident in necessitatibus, eos eum asperiores facilis dolorem, assumenda perspiciatis qui laboriosam. Consequuntur, incidunt, voluptate? Eaque est officiis iusto voluptatibus distinctio unde soluta. Eveniet cupiditate ea adipisci, fugiat dolorem placeat facere!</textarea>
+                                    <textarea name="editor1" class="form-control">{{$baiViet->noidung}}</textarea>
                                 </div>
                             </form>
                         </div>
