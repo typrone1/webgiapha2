@@ -4,7 +4,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-3 mr-auto">
-                    <a href="index.html" class="btn btn-secondary btn-block"><i class="fa fa-arrow-left"></i> Back To Dashboard</a>
+                    <a onclick="window.history.go(-1)" class="btn btn-secondary btn-block"><i class="fa fa-arrow-left"></i> Back To Dashboard</a>
                 </div>
 
                 <div class="col-md-3">
