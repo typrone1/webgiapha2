@@ -14,7 +14,7 @@ function inGiaPha($data, $mahsbo = null)
     foreach ($data as $val) {
         $parent = $val['mahsbo'];
         if ($parent == $mahsbo) {
-            echo '<li><div class="box-item"><a href="chi-tiet-ho-so/'.$val['mahoso'].'">' . $val['mahoso'] . '–' . $val['hoten'] . '</a></div>';
+            echo '<li><div class="box-item"><a href="chi-tiet-ho-so/'.$val['mahoso'].'">' . $val['mahoso'] . '–' . $val['hoten'] ." (". $val['hotenvo'].")". '</a></div>';
             $mahoso = $val['mahoso'];
             inGiaPha($data, $mahoso);
         }
@@ -61,10 +61,10 @@ function inGiaPhaDangMenu($data, $mahsbo = null, $hoten = '' )
                 echo '<li>
                     <div class="'.$temp.'">
                     <input type="checkbox" id="'.$idName.'" checked/>
-                    <img src="img/Arrow.png" class="arrow"><label for="'.$idName.'">'.$val['hoten'].'</label>';
+                    <img src="img/Arrow.png" class="arrow"><label for="'.$idName.'">'.$val['hoten']." - ".$val['hotenvo'].'</label>';
             }
             else {
-                echo '<li><a href="#">'.$val['hoten'].'</a></li>';
+                echo '<li><a href="#">'.$val['hoten']." - ".$val['hotenvo'].'</a></li>';
             }
             $mahoso = $val['mahoso'];
             inGiaPhaDangMenu($data, $mahoso, $val['hoten']);
