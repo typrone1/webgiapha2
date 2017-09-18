@@ -146,7 +146,7 @@
                     <div class="card text-center card-primary text-white mb-3">
                         <div class="card-block">
                             <h3>Việc</h3>
-                            <h1 class="display-4"><i class="fa fa-pencil"></i> 6</h1>
+                            <h1 class="display-4"><i class="fa fa-pencil"></i> {{$dsViecToc->count()}}</h1>
                             <a href="posts.html" class="btn btn-sm btn-outline-secondary text-white">Việc</a>
                         </div>
                     </div>
@@ -154,7 +154,7 @@
                     <div class="card text-center card-success text-white mb-3">
                         <div class="card-block">
                             <h3>Danh mục</h3>
-                            <h1 class="display-4"><i class="fa fa-folder-open-o"></i> 4</h1>
+                            <h1 class="display-4"><i class="fa fa-folder-open-o"></i> {{$dsDanhMuc->count()}}</h1>
                             <a href="categories.html" class="btn btn-sm btn-outline-secondary text-white">Danh mục</a>
                         </div>
                     </div>
@@ -162,7 +162,7 @@
                     <div class="card text-center card-success text-white mb-3">
                         <div class="card-block">
                             <h3>Bài viết</h3>
-                            <h1 class="display-4"><i class="fa fa-youtube-play"></i> 4</h1>
+                            <h1 class="display-4"><i class="fa fa-youtube-play"></i> {{$dsBaiViet->count()}}</h1>
                             <a href="categories.html" class="btn btn-sm btn-outline-secondary text-white">Bài viết</a>
                         </div>
                     </div>

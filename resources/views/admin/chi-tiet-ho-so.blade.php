@@ -242,6 +242,9 @@
                         <tr>
                             <?php
                             $count = $dsCon->count();
+                            if ($count == 0 ){
+                                $count=1;
+                            }
                             $percent = 100/$count;
                             $linePercent = (100/$count);
                             $marginPercent = $linePercent/2;

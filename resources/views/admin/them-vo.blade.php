@@ -40,26 +40,20 @@
                                     </div>
                                 @endif
                                 <hr>
-                                {{--<div class="form-group row">--}}
-                                    {{--<label for="example-text-input" class="col-4 col-form-label">Chọn nhánh bố</label>--}}
-                                    {{--<div class="col-8">--}}
-                                        {{--<select class="form-control" id="nhanh-bo" name="nhanh-bo">--}}
-                                            {{--@foreach($dsNhanhBo as $nhanhBo)--}}
-                                                {{--<option value="{{$nhanhBo->mahoso}}">{{$nhanhBo->hoten}}</option>--}}
-                                            {{--@endforeach--}}
-                                        {{--</select>--}}
-                                    {{--</div>--}}
-                                {{--</div>--}}
-                                {{--<div class="form-group row">--}}
-                                    {{--<label for="example-text-input" class="col-4 col-form-label">Chọn nhánh mẹ</label>--}}
-                                    {{--<div class="col-8">--}}
-                                        {{--<select class="form-control" id="nhanh-me" name="nhanh-me">--}}
-                                            {{--@foreach($dsNhanhBo as $nhanhBo)--}}
-                                            {{--<option value="{{$nhanhBo->mahoso}}">{{$nhanhBo->hoten}}</option>--}}
-                                            {{--@endforeach--}}
-                                        {{--</select>--}}
-                                    {{--</div>--}}
-                                {{--</div>--}}
+                                <div class="form-group row">
+                                    <label for="example-text-input" class="col-4 col-form-label">Họ và bố</label>
+                                    <div class="col-8">
+                                        <input class="form-control" name="ho-ten-me" type="text" value="">
+                                    </div>
+                                </div>
+
+                                <div class="form-group row">
+                                    <label for="example-text-input" class="col-4 col-form-label">Họ và mẹ</label>
+                                    <div class="col-8">
+                                        <input class="form-control" name="ho-ten-bo" type="text" value="">
+                                    </div>
+                                </div>
+
                                 <div class="form-group row">
                                     <label for="example-text-input" class="col-4 col-form-label">Họ và tên</label>
                                     <div class="col-8">
