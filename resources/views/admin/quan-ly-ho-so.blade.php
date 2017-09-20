@@ -42,7 +42,7 @@
                     <div class="container card p-2 mb-2">
                         <div class="row">
                             <div class="col-4">
-                                <img src="img/avatar.png" class="img-thumbnail" alt="">
+                                <img src="@if($hoso->hinhanh == null){{asset('img/avatar.png')}}@else{{asset('/img/anhcanhan').'/'.$hoso->hinhanh}}@endif" class="img-thumbnail" alt="">
                             </div>
                             <div class="col-8">
                                 <h5>{{ $hoso->hoten }}</h5>

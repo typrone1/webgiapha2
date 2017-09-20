@@ -37,6 +37,7 @@ class CreateHosoTable extends Migration
             $table->date('ngaymat')->nullable();
             $table->string('nguoiky');
             $table->string('diachi');
+            $table->string('hinhanh')->nullable();
             $table->timestamps();
         });
     }

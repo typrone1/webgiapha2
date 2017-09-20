@@ -1,8 +1,0 @@
-diff a/app/BaiViet.php b/app/BaiViet.php	(rejected hunks)
-@@ -6,6 +6,5 @@
- 
- class BaiViet extends Model
- {
--    protected $primaryKey = 'mabaiviet';
-     protected $table = 'baiviet';
- }

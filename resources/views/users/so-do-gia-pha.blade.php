@@ -4,8 +4,8 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-6 offset-md-3 text-center">
-                    <h1>About Us</h1>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia, ea.</p>
+                    <h1>Xem sơ đồ gia phả</h1>
+                    <p>Sơ đồ dạng Menu/ Sơ đồ dạng cây</p>
                 </div>
             </div>
         </div>
@@ -22,7 +22,6 @@
                             <a class="nav-link" data-toggle="tab" href="#profile" role="tab" aria-controls="profile">Sơ đồ dạng cây</a>
                         </li>
                     </ul>
-
                 </div>
 
             </div>

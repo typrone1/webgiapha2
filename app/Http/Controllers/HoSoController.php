@@ -26,29 +26,17 @@ class HoSoController extends Controller
         $hoSo->nguoiky = '';
         $hoSo->diachi = '';
         $hoSo->damat = false;
+        $photo = $request->file('hinhanh')->getClientOriginalName();
+        $destination = base_path() . '/public/img/anhcanhan';
+        $request->file('hinhanh')->move($destination, $photo);
+        if ($request->hasFile('hinhanh')) {
+            $hoSo->hinhanh = $request->file('hinhanh')->getClientOriginalName();
+        }
         $hoSo->save();
+
         return redirect()->back()->with('thongbao', "Tạo hồ sơ thành công");
     }
 
-
-//    protected function test(){
-//        $maHoSo = 7;
-//        $hoSo = HoSo::where('mahoso', $maHoSo)->first();
-//        $hoSoBo = HoSo::where('mahoso', $hoSo->mahsbo)->first();
-//        $hoSoOng = HoSo::where('mahoso', $hoSoBo->mahsbo)->first();
-//        echo "Bố là". $hoSoBo->hoten;
-//        echo "Ông là". $hoSoOng->hoten;
-//        $dsVo = VCHoSo::where('mahosovc', $maHoSo)->get();
-//        echo "Danh sách vợ <br>";
-//        foreach ($dsVo as $vo){
-//            echo $vo->hoten;
-//        }
-//        $dsCon = HoSo::where('mahsbo', $maHoSo)->get();
-//        echo "Danh sách con <br>";
-//        foreach ($dsCon as $con){
-//            echo $con->hoten;
-//        }
-//    }
     protected function deQuyTimDoi($data, $id, $soDoi = 1)
     {
         if ($id==1){
@@ -83,6 +71,18 @@ class HoSoController extends Controller
         $hoSo = HoSo::find($id);
         $dsVo = VCHoSo::where('mahosovc',$id)->get();
         return view('admin.them-con', compact('hoSo','dsVo'));
+    }
+
+    protected function themAnh(Request $request,$id){
+        $hoSo = HoSo::find($id);
+        $photo = $request->file('hinhanh')->getClientOriginalName();
+        $destination = base_path() . '/public/img/anhcanhan';
+        $request->file('hinhanh')->move($destination, $photo);
+        if ($request->hasFile('hinhanh')) {
+            $hoSo->hinhanh = $request->file('hinhanh')->getClientOriginalName();
+        }
+        $hoSo->save();
+        return redirect()->back();
     }
 
 }

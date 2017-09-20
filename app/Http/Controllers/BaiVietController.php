@@ -9,8 +9,13 @@ use Illuminate\Http\Request;
 
 class BaiVietController extends Controller
 {
-    protected function getBaiViet(){
-        $dsBaiViet= BaiViet::all();
+    protected function getBaiViet($id = '*'){
+        if ($id == '*'){
+            $dsBaiViet= BaiViet::all()->sortByDesc('created_at');
+        }
+        else {
+            $dsBaiViet= BaiViet::where('madanhmuc',$id)->get();
+        }
         $dsViecToc = ViecToc::all();
         $dsDanhMuc = Category::all();
         return view('users.tin-tuc-su-kien',compact('dsBaiViet', 'dsDanhMuc','dsViecToc'));
@@ -27,5 +32,9 @@ class BaiVietController extends Controller
         $baiViet = BaiViet::find($id);
         $baiViet->delete();
         return redirect()->back();
+    }
+    protected function getChiTietBaiViet($id){
+        $baiViet = BaiViet::find($id);
+        return view('users.chi-tiet-bai-viet', compact('baiViet'));
     }
 }

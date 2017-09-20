@@ -13,7 +13,8 @@
     <section id="contact" class="p-5">
         <div class="container">
             <div class="row">
-                    <div class="col-md-4">
+                <form action="{{route('post-them-ho-so')}}" method="post" enctype="multipart/form-data">
+                    <div class="col-md-4 float-left">
                         <div class="card p-4">
                             <div class="card-block">
                                 <h4 class="text-center">Ảnh hiển thị</h4>
@@ -21,16 +22,15 @@
                                 <img src="img/avatar.png" class="img-thumbnail" alt="">
                                 <div class="form-group">
                                     <label for="exampleInputFile">Chọn đường dẫn</label>
-                                    <input type="file" class="form-control-file  w-100" id="exampleInputFile" aria-describedby="fileHelp">
+                                    <input type="file" class="form-control-file  w-100" name="hinhanh" id="exampleInputFile" aria-describedby="fileHelp">
                                     <small id="fileHelp" class="form-text text-muted">This is some placeholder block-level help text for the above input. It's a bit lighter and easily wraps to a new line.</small>
                                 </div>
                             </div>
                         </div>
                     </div>
 
-                    <div class="col-md-8">
+                    <div class="col-md-8 float-md-left">
                         <div class="card p-4">
-                            <form action="{{route('post-them-ho-so')}}" method="post">
                                 <input type="hidden" name="_token" value="{{ csrf_token()}}"/>
                             <div class="card-block">
                                 <h3 class="text-center">Thông tin cá nhân</h3>
@@ -145,9 +145,10 @@
                                     </div>
                                 </div>
                             </div>
-                            </form>
+
                         </div>
                     </div>
+                </form>
             </div>
         </div>
     </section>

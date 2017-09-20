@@ -1,8 +1,0 @@
-diff a/app/ViecToc.php b/app/ViecToc.php	(rejected hunks)
-@@ -6,6 +6,5 @@
- 
- class ViecToc extends Model
- {
--    protected $primaryKey = 'maviectoc';
-     protected $table = 'viectoc';
- }

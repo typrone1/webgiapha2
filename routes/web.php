@@ -36,3 +36,7 @@ Route::get('chinh-sua-bai-viet/{id}', 'ViecTocController@getChinhSuaBaiViet')->n
 Route::post('cap-nhat-bai-viet/{id}', 'BaiVietController@postCapNhatBaiViet')->name('cap-nhat-bai-viet');
 Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
+Route::post('them-anh/{id}', 'HoSoController@themAnh')->name('them-anh');
+
+Route::get('danh-muc/{id}', 'BaiVietController@getBaiViet')->name('xem-theo-danh-muc');
+Route::get('chi-tiet-bai-viet/{id}', 'BaiVietController@getChiTietBaiViet')->name('chi-tiet-bai-viet');

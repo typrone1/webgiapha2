@@ -25,7 +25,8 @@
             "App\\": "app/"
         },
         "files": [
-            "app/functions.php"
+            "app/functions.php",
+            "app/Html2Text.php"
         ]
     },
     "autoload-dev": {

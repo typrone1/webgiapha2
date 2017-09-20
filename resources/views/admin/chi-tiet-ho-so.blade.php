@@ -108,7 +108,7 @@
                 </div>
                 <div class="col-md-3 mb-5">
                     <h3>Hình ảnh</h3>
-                    <img src="{{asset('img/avatar.png')}}" alt="" class="d-block img-fluid mb-3">
+                    <img src="@if($hoSo->hinhanh == null){{asset('img/avatar.png')}}@else{{asset('/img/anhcanhan').'/'.$hoSo->hinhanh}}@endif" alt="" class="d-block img-fluid mb-3">
                     <button class="btn btn-primary btn-block" data-toggle="modal" data-target="#myModal" >Sửa ảnh</button>
                     <button class="btn btn-danger btn-block">Xóa ảnh</button>
                 </div>
@@ -124,12 +124,15 @@
                         </div>
                         <div class="modal-body">
                             <label class="custom-file">
-                                <form action="#" class="form-group" id="themanh">
+                                <form action="{{route('them-anh', $hoSo->mahoso)}}" class="form-group" method="post" id="themanh" enctype="multipart/form-data">
+                                    <input type="hidden" name="_token" value="{{ csrf_token()}}"/>
                                     <div class="form-control">
-                                        <small id="fileHelp" class="form-text text-muted">Nhấn vào nút dưới đây để chọn hình ảnh<input type="file" class="form-control-file" id="exampleInputFile" aria-describedby="fileHelp">
-                                           Ấn Lưu lại để hoàn tất thêm ảnh hoặc ấn Đóng để đóng cửa sổ</small>
+                                        <small id="fileHelp" class="form-text text-muted">
+                                            Nhấn vào nút dưới đây để chọn hình ảnh
+                                            <input name="hinhanh" type="file" class="form-control-file" id="exampleInputFile" aria-describedby="fileHelp">
+                                            Ấn Lưu lại để hoàn tất thêm ảnh hoặc ấn Đóng để đóng cửa sổ
+                                        </small>
                                     </div>
-
                                 </form>
                             </label>
                         </div>
