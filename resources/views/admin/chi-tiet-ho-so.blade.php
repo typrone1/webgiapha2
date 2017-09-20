@@ -109,12 +109,40 @@
                 <div class="col-md-3 mb-5">
                     <h3>Hình ảnh</h3>
                     <img src="{{asset('img/avatar.png')}}" alt="" class="d-block img-fluid mb-3">
-                    <button class="btn btn-primary btn-block">Sửa ảnh</button>
+                    <button class="btn btn-primary btn-block" data-toggle="modal" data-target="#myModal" >Sửa ảnh</button>
                     <button class="btn btn-danger btn-block">Xóa ảnh</button>
+                </div>
+            </div>
+            <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Chọn đường dẫn ảnh</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <label class="custom-file">
+                                <form action="#" class="form-group" id="themanh">
+                                    <div class="form-control">
+                                        <small id="fileHelp" class="form-text text-muted">Nhấn vào nút dưới đây để chọn hình ảnh<input type="file" class="form-control-file" id="exampleInputFile" aria-describedby="fileHelp">
+                                           Ấn Lưu lại để hoàn tất thêm ảnh hoặc ấn Đóng để đóng cửa sổ</small>
+                                    </div>
+
+                                </form>
+                            </label>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Đóng</button>
+                            <button type="submit" value="submit" form="themanh" class="btn btn-primary">Lưu lại</button>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
+
 
     <section id="gia-dinh" class="p-5 bg-info">
         <div class="container">
@@ -192,6 +220,7 @@
 
                             <td colspan="3" align="center" valign="middle">
 
+                                <div style=" width: 400px;text-align:center; vertical-align:middle; background: url({{asset('img/pattern.jpg')}})">Ông nội: <br>
                                 <div style=" width: 400px;text-align:center; vertical-align:middle; background: url({{asset('img/pattern.jpg')}})">Con: <br>
                                     <span style="color:#FF0000">Đời thứ: 10 - Con thứ: 3</span><br><a href="#">{{ $hoSoOng->hoten }}</a></div>
                             </td>
@@ -203,7 +232,7 @@
                         @if(isset($hoSoBo))
                         <tr>
                             <td colspan="3" align="center" valign="middle">
-                                <div style="width: 400px;  text-align:center; vertical-align:middle; background: url({{asset('img/pattern.jpg')}})">Con: <br>
+                                <div style="width: 400px;  text-align:center; vertical-align:middle; background: url({{asset('img/pattern.jpg')}})">Bố: <br>
                                     <span style="color:#FF0000">Đời thứ: 10 - Con thứ: 3</span><br><a href="#">{{ $hoSoBo->hoten }}</a></div>
                             </td>
                         </tr>
@@ -218,14 +247,14 @@
                                     <tr>
                                         <td width="50%" align="center" valign="top" style="vertical-align:middle; background: url({{asset('img/pattern.jpg')}})">
                                             <div align="center" style="background-color:#FFFFFF"><img src="{{asset('img/down.gif')}}"></div>
-                                            <div style="text-align:center; vertical-align:middle; position: relative">Con: <br>
+                                            <div style="text-align:center; vertical-align:middle; position: relative">Anh em: <br>
                                                 <span style="color:#FF0000">Đời thứ: 10 - Con thứ: 3</span><br><a href="#">{{ $hoSo->hoten }}</a>
                                                 <div style="position: absolute; right: 0; top: 0; height: 100%; width: 1px; background-color: #fff "></div>
                                             </div>
                                         </td>
                                         <td width="50%" align="center" valign="top" style="vertical-align:middle; background: url({{asset('img/pattern.jpg')}})">
                                             <div align="center" style="background-color:#FFFFFF"><img src="{{asset('img/down.gif')}}"></div>
-                                            <div style="text-align:center; vertical-align:middle; position: relative">Con: <br>
+                                            <div style="text-align:center; vertical-align:middle; position: relative">Anh em: <br>
                                                 <span style="color:#FF0000">Đời thứ: 10 - Con thứ: 3</span><br><a href="#">Trần Hưng Hân</a>
                                                 <div style="position: absolute; right: 0; top: 0; height: 100%; width: 1px; background-color: #fff "></div>
                                             </div>
@@ -252,7 +281,6 @@
                             <td colspan="3" align="center" style="position: relative"><img src="{{asset('img/VLine.jpg')}}" width="{{$linePercent*($count-1)}}%" height="1px" style="position: absolute; left: {{$marginPercent}}%">
                                 <table width="100%" border="0" cellspacing="0" cellpadding="0">
                                     <tbody>
-
                                     @foreach($dsCon as $con)
                                     <td width="{{$percent}}%" align="center" valign="top" style="vertical-align:middle; height: 200px; float: left; background: url({{asset('img/pattern.jpg')}})">
                                         <div align="center" style="background-color:#FFFFFF"><img src="{{asset('img/down.gif')}}"></div>
@@ -356,4 +384,5 @@
             </div>
         </div>
     </section>
+
 @endsection

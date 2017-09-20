@@ -6,8 +6,7 @@
                 <div class="col-md-6 offset-md-3 text-center">
                     <h1>Tin tức - Sự kiện</h1>
                     <p>Chào mừng bạn đến với trang web</p>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia, ea.</p>
-                </div>
+                    </div>
             </div>
         </div>
     </header>
@@ -38,7 +37,7 @@
                             <div class="row">
                                 <div class="col-6">
                                     <div style="height: 260px; overflow: hidden">
-                                        <img src="http://lorempixel.com/500/500/city/1" alt="" class="img-fluid">
+                                        <img src="{{asset('img/anhbaiviet').'/'.$baiViet->hinhanh}}" alt="" class="img-fluid">
                                     </div>
                                 </div>
                                 <div class="col-6">
@@ -78,6 +77,39 @@
                         </li>
                         @endforeach
                     </ul>
+                    <table class="table table-sm">
+                        <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Ngày</th>
+                            <th>Tiêu đề</th>
+                            <th>Nội dung</th>
+                            <th>Ngày đưa tin</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <?php $count = 0 ?>
+                        @foreach($dsViecToc as $viecToc)
+                            <?php $count++ ?>
+                            <tr>
+                                <td scope="row">{{$count}}</td>
+                                <td>{{$viecToc->ngaydienra }}</td>
+                                <td>{{$viecToc->tensukien}}</td>
+                                <td>{{ str_limit($viecToc->noidung,25)}}</td>
+                                <td>{{$viecToc->created_at}}</td>
+                            </tr>
+                        @endforeach
+                        </tbody>
+                    </table>
+                    <nav class="ml-4">
+                        <ul class="pagination">
+                            <li class="page-item disabled"><a href="#" class="page-link">Previous</a></li>
+                            <li class="page-item active"><a href="#" class="page-link">1</a></li>
+                            <li class="page-item"><a href="#" class="page-link">2</a></li>
+                            <li class="page-item"><a href="#" class="page-link">3</a></li>
+                            <li class="page-item"><a href="#" class="page-link">Next</a></li>
+                        </ul>
+                    </nav>
                 </div>
             </div>
         </div>
