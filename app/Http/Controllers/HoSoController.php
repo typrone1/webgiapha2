@@ -26,11 +26,14 @@ class HoSoController extends Controller
         $hoSo->nguoiky = '';
         $hoSo->diachi = '';
         $hoSo->damat = false;
-        $photo = $request->file('hinhanh')->getClientOriginalName();
-        $destination = base_path() . '/public/img/anhcanhan';
-        $request->file('hinhanh')->move($destination, $photo);
-        if ($request->hasFile('hinhanh')) {
-            $hoSo->hinhanh = $request->file('hinhanh')->getClientOriginalName();
+        if($request->has('hinhanh')){
+            $photo = $request->file('hinhanh')->getClientOriginalName();
+            $destination = base_path() . '/public/img/anhcanhan';
+            $request->file('hinhanh')->move($destination, $photo);
+            if ($request->hasFile('hinhanh')) {
+                $hoSo->hinhanh = $request->file('hinhanh')->getClientOriginalName();
+            }
+
         }
         $hoSo->save();
 

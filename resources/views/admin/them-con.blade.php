@@ -4,7 +4,8 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-3 mr-auto">
-                    <a onclick="window.history.go(-1)" class="btn btn-secondary btn-block"><i class="fa fa-arrow-left"></i> Back To Dashboard</a>
+                    <a onclick="window.history.go(-1)" class="btn btn-secondary btn-block"><i
+                                class="fa fa-arrow-left"></i> Back To Dashboard</a>
                 </div>
             </div>
         </div>
@@ -21,8 +22,11 @@
                             <img src="{{asset('img/avatar.png')}}" class="img-thumbnail" alt="">
                             <div class="form-group">
                                 <label for="exampleInputFile">Chọn đường dẫn</label>
-                                <input type="file" class="form-control-file  w-100" id="exampleInputFile" aria-describedby="fileHelp">
-                                <small id="fileHelp" class="form-text text-muted">This is some placeholder block-level help text for the above input. It's a bit lighter and easily wraps to a new line.</small>
+                                <input type="file" class="form-control-file  w-100" id="exampleInputFile"
+                                       aria-describedby="fileHelp">
+                                <small id="fileHelp" class="form-text text-muted">This is some placeholder block-level
+                                    help text for the above input. It's a bit lighter and easily wraps to a new line.
+                                </small>
                             </div>
                         </div>
                     </div>
@@ -47,22 +51,25 @@
                                     <div class="col-8">
                                         <select class="form-control" id="nhanh-me" name="nhanh-me">
                                             @foreach($dsVo as $vo)
-                                            <option value="{{$vo->mahoso}}">{{$vo->hoten}}</option>
+                                                <option value="{{$vo->mahoso}}">{{$vo->hoten}}</option>
                                             @endforeach
+                                            <option value="">Con nuôi</option>
                                         </select>
                                     </div>
                                 </div>
                                 <div class="form-group row">
                                     <label for="example-text-input" class="col-4 col-form-label">Họ và tên</label>
                                     <div class="col-8">
-                                        <input class="form-control" name="ho-ten" type="text" value="" id="example-text-input">
+                                        <input class="form-control" name="ho-ten" type="text" value=""
+                                               id="example-text-input">
                                     </div>
                                 </div>
 
                                 <div class="form-group row">
                                     <label for="example-text-input" class="col-4 col-form-label">Ngày sinh</label>
                                     <div class="col-8">
-                                        <input class="form-control" name="ngay-sinh" type="date" value="2011-08-19" id="example-date-input">
+                                        <input class="form-control" name="ngay-sinh" type="date" value="2011-08-19"
+                                               id="example-date-input">
                                     </div>
                                 </div>
                                 <div class="form-group row">
@@ -70,12 +77,14 @@
                                     <div class="col-8">
                                         <div class="form-check form-check-inline">
                                             <label class="form-check-label">
-                                                <input class="form-check-input" type="radio" name="gioi-tinh" id="gioi-tinh" value="nam" checked> Nam
+                                                <input class="form-check-input" type="radio" name="gioi-tinh"
+                                                       id="gioi-tinh" value="nam" checked> Nam
                                             </label>
                                         </div>
                                         <div class="form-check form-check-inline">
                                             <label class="form-check-label">
-                                                <input class="form-check-input" type="radio" name="gioi-tinh" id="gioi-tinh" value="nu"> Nữ
+                                                <input class="form-check-input" type="radio" name="gioi-tinh"
+                                                       id="gioi-tinh" value="nu"> Nữ
                                             </label>
                                         </div>
                                     </div>
@@ -91,31 +100,36 @@
                                 <div class="form-group row">
                                     <label for="example-text-input" class="col-4 col-form-label">Đời thứ</label>
                                     <div class="col-8">
-                                        <input class="form-control" type="number" name="doi-thu" value="1" id="example-text-input">
+                                        <input class="form-control" type="number" name="doi-thu" value="1"
+                                               id="example-text-input">
                                     </div>
                                 </div>
                                 <div class="form-group row">
                                     <label for="example-text-input" class="col-4 col-form-label">Con thứ</label>
                                     <div class="col-8">
-                                        <input class="form-control" type="number" name="con-thu" value="2" id="example-text-input">
+                                        <input class="form-control" type="number" name="con-thu" value="2"
+                                               id="example-text-input">
                                     </div>
                                 </div>
                                 <div class="form-group row">
                                     <label for="example-text-input" class="col-4 col-form-label">Email</label>
                                     <div class="col-8">
-                                        <input class="form-control" type="text" name="email" value="abc@gmail.com" id="example-text-input">
+                                        <input class="form-control" type="text" name="email" value="abc@gmail.com"
+                                               id="example-text-input">
                                     </div>
                                 </div>
                                 <div class="form-group row">
                                     <label for="example-text-input" class="col-4 col-form-label">Số điện thoại</label>
                                     <div class="col-8">
-                                        <input class="form-control" type="text" value="0123456789" name="sdt" id="example-text-input">
+                                        <input class="form-control" type="text" value="0123456789" name="sdt"
+                                               id="example-text-input">
                                     </div>
                                 </div>
                                 <div class="form-group row">
                                     <label for="example-text-input" class="col-4 col-form-label">Nghề nghiệp</label>
                                     <div class="col-8">
-                                        <input class="form-control" type="text" name="nghe-nghiep"  id="example-text-input">
+                                        <input class="form-control" type="text" name="nghe-nghiep"
+                                               id="example-text-input">
                                     </div>
                                 </div>
                                 <div class="form-check">
@@ -128,7 +142,8 @@
                                 <div class="form-group row">
                                     <label for="example-text-input" class="col-4 col-form-label">Ngày mất</label>
                                     <div class="col-8">
-                                        <input class="form-control" type="date" name="ngay-mat" value="20-08-19" id="example-date-input" disabled>
+                                        <input class="form-control" type="date" name="ngay-mat" value="20-08-19"
+                                               id="example-date-input" disabled>
                                     </div>
                                 </div>
                                 <div class="row">

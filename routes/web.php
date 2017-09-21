@@ -12,14 +12,12 @@
 */
 
 Route::get('/', function () {
-    return redirect()->route('dashboard');
+    return redirect()->route('tin-tuc');
 });
-Route::get('admin', 'AdminController@index')->name('dashboard');
+
 Route::get('quan-ly-ho-so', 'AdminController@getQuanLyHoSo')->name('quan-ly-ho-so');
 Route::get('tim-kiem-ho-so', 'AdminController@getTimKiemHoSo')->name('tim-kiem');
-Route::get('chi-tiet-ho-so/{id}', 'AdminController@getChiTietHoSo')->name('chi-tiet-ho-so');
-Route::get('chi-tiet-ho-so/{id}/them-vo', 'VCHoSoController@getThemVo')->name('them-vo');
-Route::get('them-con/{id}','HoSoController@getThemCon')->name('them-con');
+
 Route::post('post-them-vo/{id}','VCHoSoController@postThemVo')->name('post-them-vo');
 Route::get('so-do-gia-pha', 'UserController@getSoDoGiaPha')->name('so-do-gia-pha');
 Route::get('them-ho-so', 'AdminController@getThemHoSo')->name('them-ho-so');
@@ -37,6 +35,12 @@ Route::post('cap-nhat-bai-viet/{id}', 'BaiVietController@postCapNhatBaiViet')->n
 Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 Route::post('them-anh/{id}', 'HoSoController@themAnh')->name('them-anh');
-
 Route::get('danh-muc/{id}', 'BaiVietController@getBaiViet')->name('xem-theo-danh-muc');
 Route::get('chi-tiet-bai-viet/{id}', 'BaiVietController@getChiTietBaiViet')->name('chi-tiet-bai-viet');
+Route::get('ho-so/{id}', 'UserController@getHoSo')->name('ho-so');
+Route::group(['middleware' => 'auth'], function() {
+    Route::get('admin', 'AdminController@index')->name('dashboard');
+    Route::get('chi-tiet-ho-so/{id}', 'AdminController@getChiTietHoSo')->name('chi-tiet-ho-so');
+    Route::get('chi-tiet-ho-so/{id}/them-vo', 'VCHoSoController@getThemVo')->name('them-vo');
+    Route::get('them-con/{id}','HoSoController@getThemCon')->name('them-con');
+});

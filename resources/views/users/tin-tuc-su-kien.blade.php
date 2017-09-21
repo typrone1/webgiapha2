@@ -44,7 +44,7 @@
                                     <small class="text-muted">Written by Admin on {{$baiViet->created_at}}</small>
                                     <hr>
                                     <p class="card-text">
-                                        {{ Html2Text\Html2Text::convert($baiViet->noidung)}}
+                                        {{ str_limit(Html2Text\Html2Text::convert($baiViet->noidung),200)}}
                                     </p>
                                 </div>
                             </div>

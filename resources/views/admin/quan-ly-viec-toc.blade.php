@@ -245,7 +245,7 @@
                         </div>
                         <div class="form-group">
                             <label for="body">Nội dung bài</label>
-                            <textarea name="editor1" class="form-control"></textarea>
+                            <textarea name="editor2" class="form-control"></textarea>
                         </div>
                     </form>
                 </div>

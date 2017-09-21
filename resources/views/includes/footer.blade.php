@@ -17,6 +17,7 @@
 <script src="https://cdn.ckeditor.com/4.7.1/standard/ckeditor.js"></script>
 <script>
     CKEDITOR.replace('editor1');
+    CKEDITOR.replace('editor2');
 </script>
 </body>
 </html>

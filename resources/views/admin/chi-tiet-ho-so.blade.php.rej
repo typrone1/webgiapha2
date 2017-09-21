@@ -1,9 +1,0 @@
-diff a/resources/views/admin/chi-tiet-ho-so.blade.php b/resources/views/admin/chi-tiet-ho-so.blade.php	(rejected hunks)
-@@ -192,7 +192,6 @@
- 
-                             <td colspan="3" align="center" valign="middle">
- 
--                                <div style=" width: 400px;text-align:center; vertical-align:middle; background: url({{asset('img/pattern.jpg')}})">Ông nội: <br>
-                                 <div style=" width: 400px;text-align:center; vertical-align:middle; background: url({{asset('img/pattern.jpg')}})">Con: <br>
-                                     <span style="color:#FF0000">Đời thứ: 10 - Con thứ: 3</span><br><a href="#">{{ $hoSoOng->hoten }}</a></div>
-                             </td>

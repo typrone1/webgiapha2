@@ -28,30 +28,34 @@
         <div class="collapse navbar-collapse" id="navbarNav">
             <a href="/" class="navbar-brand"> Gia phả</a>
             <ul class="navbar-nav">
-                <li class="nav-item active">
+                <li class="nav-item {{ Request::is('tin-tuc-su-kien') ? 'active' : '' }}">
                     <a href="/" class="nav-link"> Trang chủ</a>
                 </li>
-                <li class="nav-item">
+
+                <li class="nav-item {{ Request::is('quan-ly-ho-so') ? 'active' : '' }}">
                     <a class="nav-link" href="{{route('quan-ly-ho-so')}}"> Hồ sơ thành viên </a>
                 </li>
-                <li class="nav-item">
+                <li class="nav-item {{ Request::is('so-do-gia-pha') ? 'active' : '' }}">
                     <a class="nav-link" href="{{route('so-do-gia-pha')}}"> Xem cây gia phả </a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="{{ route('quan-ly-viec-toc') }}"> Xem lịch việc tộc </a>
-                </li>
+
+                @if(Auth::check())
+                    <li class="nav-item {{ Request::is('quan-ly-viec-toc*') ? 'active' : '' }}">
+                        <a class="nav-link" href="{{ route('quan-ly-viec-toc') }}"> Xem lịch việc tộc </a>
+                    </li>
+                @endif
+
                 <li class="nav-item">
                     <a class="nav-link" href="{{ route('tin-tuc') }}"> Tin tức sự kiện </a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link"> Tìm kiếm </a>
+                <li class="nav-item {{ Request::is('tim-kiem*') ? 'active' : '' }}">
+                    <a class="nav-link" href="{{route('tim-kiem')}}"> Tìm kiếm </a>
                 </li>
             </ul>
             <ul class="navbar-nav ml-auto">
                 @guest
-                <li><a class="nav-link" href="{{ route('login') }}">Login</a></li>
-                <li><a class="nav-link" href="{{ route('register') }}">Register</a></li>
-
+                <li><a class="nav-link" href="{{ route('login') }}"><i class="fa fa-facebook" aria-hidden="true"></i> Login</a></li>
+                <li><a class="nav-link" href="{{ route('register') }}"><i class="fa fa-registered" aria-hidden="true"></i> Register</a></li>
                 @else
                     <li class="nav-item dropdown mr-3">
                         <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" data-toggle="dropdown" role="button" aria-expanded="false">
@@ -63,6 +67,7 @@
                                 <a class="dropdown-item" href="{{ route('logout') }}"
                                    onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
+                                    <i class="fa fa-telegram" aria-hidden="true"></i>
                                     Logout
                                 </a>
 

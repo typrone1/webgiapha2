@@ -32,7 +32,6 @@
         <div class="container">
             <p>Tìm thấy {{ $count }} kết quả</p>
             <div class="row">
-                {{----}}
                 @foreach($dsHoSo as $hoso)
                 <div class="col-md-6">
                     <div class="container card p-2 mb-2">
@@ -44,7 +43,7 @@
                                 <h5>{{ $hoso->hoten }}</h5>
                                 <p><span>Ngày sinh: {{ $hoso->ngaysinh }}</span> - <span>Ngày dỗ: 31/2/1999</span></p>
                                 <p><span>Quê quán</span></p>
-                                <a href="{{ route('chi-tiet-ho-so', $hoso->mahoso)}}" class="btn btn-primary">Xem chi tiết</a>
+                                <a href="{{ route('ho-so', $hoso->mahoso)}}" class="btn btn-primary">Xem chi tiết</a>
                             </div>
                         </div>
                     </div>

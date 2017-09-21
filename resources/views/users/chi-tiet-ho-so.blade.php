@@ -7,152 +7,53 @@
                     <a onclick="window.history.go(-1)" class="btn btn-secondary btn-block"><i
                                 class="fa fa-arrow-left"></i> Back To Dashboard</a>
                 </div>
-
+                @if(Auth::check())
+                    <div class="col-md-3">
+                        <a href="{{ route('chi-tiet-ho-so', $hoSo->mahoso)}}" class="btn btn-success btn-block"><i
+                                    class="fa fa-check"></i> Chỉnh sửa</a>
+                    </div>
+                @endif
                 <div class="col-md-3">
-                    <button type="submit" form="thong-tin" value="Submit" class="btn btn-success btn-block"><i
-                                class="fa fa-check"></i> Lưu thay đổi
-                    </button>
-                </div>
-                <div class="col-md-3">
-                    <a href="index.html" class="btn btn-danger btn-block"><i class="fa fa-remove"></i> Xóa hồ sơ</a>
+                    <a href="#" class="btn btn-danger btn-block"><i class="fa fa-id-card" aria-hidden="true"></i> Bổ
+                        sung thêm thông tin</a>
                 </div>
             </div>
         </div>
     </section>
 
     <section>
-        <div class="container card p-3 mb-5">
+        <div class="container card p-3">
             <h4 class="text-center">Hồ Sơ Gia Tộc</h4>
             <div class="row">
-
-                <div class="col-md-9">
-                    <form action="{{ route('cap-nhat-ho-so', $hoSo->mahoso)}}" method="post" id="thong-tin">
-                        @if(Session::has('thongbao'))
-                            <div class="alert alert-success" role="alert">
-                                <strong>Cập nhật hồ sơ thành công!</strong>
-                            </div>
-                        @endif
-                        <input type="hidden" name="_token" value="{{ csrf_token()}}"/>
-                        <h5>{{ $hoSo->hoten }}</h5>
-                        <p>Đời thứ: {{$hoSo->doithu}} - Con thứ {{$hoSo->conthu}} </p>
-                        <hr>
-                        <div class="form-group row">
-                            <label for="example-text-input" class="col-md-2 col-form-label">Tên tự (Hiệu)</label>
-                            <div class="col-md-4">
-                                <input class="form-control" type="text" value="" id="example-text-input">
-                            </div>
-                            <label for="example-text-input" class="col-md-2 col-form-label">Tên thường gọi</label>
-                            <div class="col-md-4">
-                                <input class="form-control" type="text" value="" id="example-text-input">
-                            </div>
-                        </div>
-                        <div class="form-group row">
-                            <label for="example-text-input" class="col-md-2 col-form-label">Giới tính</label>
-                            <div class="col-md-10">
-                                <div class="form-check form-check-inline">
-                                    <label class="form-check-label">
-                                        <input class="form-check-input" type="radio" name="gioi-tinh" id="gioi-tinh"
-                                               value="nam" checked> Nam
-                                    </label>
-                                </div>
-                                <div class="form-check form-check-inline">
-                                    <label class="form-check-label">
-                                        @if($hoSo->gioitinh !== true)
-                                            <input class="form-check-input" type="radio" name="gioi-tinh" id="gioi-tinh"
-                                                   value="nu"> Nữ
-                                        @else
-                                            <input class="form-check-input" type="radio" name="gioi-tinh" id="gioi-tinh"
-                                                   value="nu" checked>
-                                        @endif
-                                    </label>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="form-group row">
-                            <label for="example-text-input" class="col-md-2 col-form-label">Nơi ở</label>
-                            <div class="col-md-10">
-                                <input class="form-control" name="diachi" type="text" value="{{$hoSo->diachi}}"
-                                       id="example-text-input">
-                            </div>
-                        </div>
-                        <div class="form-group row">
-                            <label for="example-text-input" class="col-md-2 col-form-label">Địa vị xã hội</label>
-                            <div class="col-md-4">
-                                <input class="form-control" type="text" value="" id="example-text-input">
-                            </div>
-                            <label for="example-text-input" class="col-md-2 col-form-label">Học hàm học vị</label>
-                            <div class="col-md-4">
-                                <input class="form-control" type="text" value="" id="example-text-input">
-                            </div>
-                        </div>
-                        <div class="form-group row">
-                            <label for="example-text-input" class="col-md-2 col-form-label">Địa chỉ Email:</label>
-                            <div class="col-md-10">
-                                <input class="form-control" name="email" type="text" value="{{$hoSo->email}}"
-                                       id="example-text-input">
-                            </div>
-                        </div>
-                        <div class="form-group row">
-                            <label for="example-text-input" class="col-md-2 col-form-label">Số điện thoại:</label>
-                            <div class="col-md-10">
-                                <input class="form-control" name="sdt" type="text" value="{{$hoSo->sdt}}"
-                                       id="example-text-input">
-                            </div>
-                        </div>
-                        <div class="bg-faded" style="border-radius: 5px;">
-                            <div class="container p-2">
-                                <div class="row">
-                                    <div class="col-6">Ngày mất: {{$hoSo->ngaymat}}</div>
-                                    <div class="col-6">Nơi mất: {{$hoSo->noimat}} </div>
-                                </div>
-
-                                <div class="row">
-                                    <div class="col-6">Ngày kỵ: 6/2/1999</div>
-                                    <div class="col-6">Nơi an táng:</div>
-                                    <div class="col-6">Người kỵ:</div>
-                                </div>
-                            </div>
-                        </div>
-                    </form>
-                </div>
-                <div class="col-md-3 mb-5">
-                    <h3>Hình ảnh</h3>
+                <div class="col-md-3">
                     <img src="@if($hoSo->hinhanh == null){{asset('img/avatar.png')}}@else{{asset('/img/anhcanhan').'/'.$hoSo->hinhanh}}@endif"
-                         alt="" class="d-block img-fluid mb-3">
-                    <button class="btn btn-primary btn-block" data-toggle="modal" data-target="#myModal">Sửa ảnh
-                    </button>
-                    <button class="btn btn-danger btn-block">Xóa ảnh</button>
+                         alt="" class="d-block img-thumbnail mb-3">
                 </div>
-            </div>
-            <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-                 aria-hidden="true">
-                <div class="modal-dialog" role="document">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title" id="exampleModalLabel">Chọn đường dẫn ảnh</h5>
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
-                            </button>
-                        </div>
-                        <div class="modal-body">
-                            <label class="custom-file">
-                                <form action="{{route('them-anh', $hoSo->mahoso)}}" class="form-group" method="post"
-                                      id="themanh" enctype="multipart/form-data">
-                                    <input type="hidden" name="_token" value="{{ csrf_token()}}"/>
-                                    <div class="form-control">
-                                        <small id="fileHelp" class="form-text text-muted">
-                                            Nhấn vào nút dưới đây để chọn hình ảnh
-                                            <input name="hinhanh" type="file" class="form-control-file"
-                                                   id="exampleInputFile" aria-describedby="fileHelp">
-                                            Ấn Lưu lại để hoàn tất thêm ảnh hoặc ấn Đóng để đóng cửa sổ
-                                        </small>
-                                    </div>
-                                </form>
-                            </label>
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Đóng</button>
-                            <button type="submit" value="submit" form="themanh" class="btn btn-primary">Lưu lại</button>
+                <div class="col-md-9">
+                    <h5>(Ông) {{ $hoSo->hoten }}</h5>
+                    <p>Đời thứ: {{$hoSo->doithu}} - Con thứ {{$hoSo->conthu}} </p>
+                    <hr>
+                    <p>Tên tự (Hiệu): </p>
+                    <p>Giới tính: @if($hoSo->gioitinh !== true){{'Nam'}}@else {{'Nữ'}}@endif</p>
+                    <p>Nơi ở: {{$hoSo->diachi}}</p>
+                    <p>Địa vị xã hội:</p>
+                    <p>Học hàm học vị:</p>
+                    <p>Sự tích:</p>
+                    <p>Địa chỉ Email: {{$hoSo->email}}</p>
+                    <p>Số điện thoại: {{$hoSo->sdt}}</p>
+
+                    <div class="bg-faded" style="border-radius: 5px;">
+                        <div class="container p-2">
+                            <div class="row">
+                                <div class="col-6">Ngày mất: {{$hoSo->ngaymat}}</div>
+                                <div class="col-6">Nơi mất: {{$hoSo->noimat}}</div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-6">Ngày kỵ: 6/2/1999</div>
+                                <div class="col-6">Nơi an táng:</div>
+                                <div class="col-6">Người kỵ:</div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -160,10 +61,10 @@
         </div>
     </section>
 
-
     <section id="gia-dinh" class="p-5 bg-info">
         <div class="container">
             <div class="row">
+                <div class="col-12">
                 <?php
                 $count = 0;
                 ?>
@@ -171,7 +72,6 @@
                     <?php
                     $count++
                     ?>
-                    <div class="col-12">
                         <h5><i class="fa fa-arrow-circle-o-up"></i> Vợ {{$count}} {{ $vo->hoten }}</h5>
                         <p>Năm sinh: {{$year = date('Y', strtotime($vo->ngaysinh))}}</p>
                         <p>Quê quán: {{ $vo->quequan }}</p>
@@ -187,21 +87,21 @@
                                 @endif
                             @endforeach
                         </ol>
-                    </div>
                 @endforeach
-                <div class="col-12">
-                    <h5><i class="fa fa-adn"></i> Danh sách con nuôi</h5>
-                    <ol>
-                        @foreach($dsCon as $con)
-                            @if($con->mahsme == null)
-                                <li><a class="btn btn-link" href="{{ route('chi-tiet-ho-so', $con->mahoso) }}">Con
-                                        thứ: {{$con->conthu}} - Đời thứ: {{$con->doithu}} {{$con->hoten}}</a></li>
-                            @endif
-                        @endforeach
-                    </ol>
+                    <div class="row">
+                        <div class="col-12">
+                            <h5><i class="fa fa-adn"></i> Danh sách con nuôi</h5>
+                            <ol>
+                                @foreach($dsCon as $con)
+                                    @if($con->mahsme == null)
+                                        <li><a class="btn btn-link" href="{{ route('chi-tiet-ho-so', $con->mahoso) }}">Con
+                                                thứ: {{$con->conthu}} - Đời thứ: {{$con->doithu}} {{$con->hoten}}</a></li>
+                                    @endif
+                                @endforeach
+                            </ol>
+                        </div>
+                    </div>
                 </div>
-                <a href="{{route('them-vo', $hoSo->mahoso)}}" class="btn btn-primary">Thêm vợ</a>
-                <a href="{{route('them-con', $hoSo->mahoso)}}" class="btn btn-secondary">Thêm con</a>
             </div>
         </div>
     </section>
@@ -222,12 +122,7 @@
                         <div class="col-sm-12 col-md-6">
                             <h5><i class="fa fa-arrow-circle-o-up"></i> Cháu ngoại</h5>
                             <ul>
-                                <li><a href="#">Con thứ: 1 - Đời thứ: 10 Nguyễn Thị G</a></li>
-                                <li><a href="#">Con thứ: 1 - Đời thứ: 10 Nguyễn Thị G</a></li>
-                                <li><a href="#">Con thứ: 1 - Đời thứ: 10 Nguyễn Thị G</a></li>
-                                <li><a href="#">Con thứ: 1 - Đời thứ: 10 Nguyễn Thị G</a></li>
-                                <li><a href="#">Con thứ: 1 - Đời thứ: 10 Nguyễn Thị G</a></li>
-                                <li><a href="#">Con thứ: 1 - Đời thứ: 10 Nguyễn Thị G</a></li>
+                                <li><a>Con thứ: 1 - Đời thứ: 10 Nguyễn Thị G</a></li>
                             </ul>
                         </div>
                     </div>
@@ -380,24 +275,16 @@
                                 <div class="container p-2" style="position: relative">
                                     <div id="verticle-line"></div>
                                     <div class="row">
-                                        <div class="col-12 my-3">
-                                            <div class="circle">
-                                                <span>1997</span>
+
+                                        @foreach($dsHocVan as $hocVan)
+                                            <div class="col-12 my-3">
+                                                <div class="circle">
+                                                    <span style="font-size: 0.6em">{{$hocVan->tgtu}}
+                                                        -{{$hocVan->tgden}}</span>
+                                                </div>
+                                                <span>{{$hocVan->hoctai}}({{$hocVan->congviec}})</span>
                                             </div>
-                                            <span>Học trường THPT Lương Thế Vinh</span>
-                                        </div>
-                                        <div class="col-12  my-3">
-                                            <div class="circle">
-                                                <span>1997</span>
-                                            </div>
-                                            <span>Học trường THPT Lương Thế Vinh</span>
-                                        </div>
-                                        <div class="col-12 my-3 ">
-                                            <div class="circle">
-                                                <span>1997</span>
-                                            </div>
-                                            <span>Học trường THPT Lương Thế Vinh</span>
-                                        </div>
+                                        @endforeach
                                     </div>
                                 </div>
                             </div>
@@ -450,5 +337,4 @@
             </div>
         </div>
     </section>
-
 @endsection

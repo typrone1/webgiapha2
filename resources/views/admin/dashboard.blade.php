@@ -4,7 +4,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-6">
-                    <h1><i class="fa fa-dashboard"></i>Trang dashboard</h1>
+                    <h1><i class="fa fa-dashboard"></i>Trang quản trị</h1>
                 </div>
             </div>
         </div>
@@ -14,47 +14,29 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-6 mb-5">
-                    <div class="card" style="height: 180px;">
-                        <div class="card-block  bg-warning">
-                            <i class="fa fa-bookmark fa-4x"></i>
-                            <a  href="{{route('quan-ly-ho-so')}}" class="btn btn-primary btn-lg">Quản lý hồ sơ</a>
-                        </div>
-
+                    <div class="d-flex align-items-center justify-content-center" style="background:linear-gradient( #400080, transparent),linear-gradient(200deg, #d047d1, #ff0000, #ffff00);">
+                            <a href="{{route('quan-ly-ho-so')}}" class="btn btn-primary btn-lg m-5 w-50"><i class="fa fa-bookmark"></i> Quản lý hồ sơ</a>
                     </div>
+                </div>
 
+                <div class="col-md-6 mb-5">
+                    <div class="d-flex align-items-center justify-content-center bg-info">
+                        <a href="{{route('quan-ly-viec-toc')}}" class="btn btn-outline-danger btn-lg m-5 w-50"><i class="fa fa-podcast"></i> Viết bài</a>
+                    </div>
+                </div>
+
+                <div class="col-md-6 mb-5">
+                    <div class="d-flex align-items-center justify-content-center bg-warning">
+                        <a href="{{route('quan-ly-ho-so')}}" class="btn btn-outline-primary btn-lg m-5 w-50"><i class="fa fa-youtube-play"></i> Xem thông tin tài khoản</a>
+                    </div>
                 </div>
                 <div class="col-md-6 mb-5">
-                    <div class="card" style="height: 180px;">
-                        <div class="card-block  bg-success">
-                            <i class="fa fa-lock fa-4x"></i>
-                            <span style="font-size: 2em">Chỉnh sửa tài khoản</span>
-                        </div>
-
+                    <div class="d-flex align-items-center justify-content-center bg-danger">
+                        <a href="{{route('quan-ly-viec-toc')}}" class="btn btn-primary btn-lg m-5 w-50"><i class="fa fa-book"></i> Quản lý việc tộc</a>
                     </div>
-
                 </div>
-                <div class="col-md-6 mb-5">
-                    <div class="card" style="height: 180px;">
-                        <div class="card-block  bg-danger">
-                            <i class="fa fa-podcast fa-4x"></i>
-                            <span style="font-size: 2em">Viết bài</span>
-                        </div>
 
-                    </div>
-
-                </div>
-                <div class="col-md-6 mb-5">
-                    <div class="card" style="height: 180px;">
-                        <div class="card-block  bg-warning">
-                            <i class="fa fa-book fa-4x"></i>
-                            <span style="font-size: 2em;">Quản lý việc tộc</span>
-                        </div>
-
-                    </div>
-
-                </div>
             </div>
-        </div>
         </div>
     </section>
 @endsection
