@@ -207,7 +207,7 @@ right connector from last child*/
     border: 1px solid #ccc;
     padding: 5px 10px;
     text-decoration: none;
-    color: #666;
+    color: #000000;
     font-family: arial, verdana, tahoma;
     font-size: 11px;
     display: inline-block;
@@ -225,8 +225,8 @@ right connector from last child*/
 
 .tree li a:hover,
 .tree li a:hover+ul li a {
-    background: #c8e4f8;
     color: #000;
+    opacity: 1;
     border: 1px solid #94a0b4;
 }
 /*Connector styles on hover*/
@@ -236,4 +236,14 @@ right connector from last child*/
 .tree li a:hover+ul::before,
 .tree li a:hover+ul ul::before {
     border-color: #94a0b4;
+}
+
+.hop-chua {
+    line-height: 60px;
+    font-size: 18px;
+    height: 60px;
+    font-weight: bold;
+    background-image: url("../img/bghopchua.jpg");
+    background-size: cover;
+    opacity: 0.9;
 }

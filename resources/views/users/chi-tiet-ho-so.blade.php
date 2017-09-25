@@ -90,7 +90,7 @@
                 @endforeach
                     <div class="row">
                         <div class="col-12">
-                            <h5><i class="fa fa-adn"></i> Danh sách con nuôi</h5>
+                            <h5><i class="fa fa-adn"></i> Danh sách con</h5>
                             <ol>
                                 @foreach($dsCon as $con)
                                     @if($con->mahsme == null)
@@ -110,19 +110,13 @@
             <div class="card">
                 <div class="card-block">
                     <div class="row">
-                        <div class="col-sm-12 col-md-6">
+                        <div class="col-sm-12">
                             <h5><i class="fa fa-arrow-circle-o-up"></i> Cháu nội</h5>
                             <ul>
                                 @foreach($dsCon as $con)
                                     <li><a href="{{ route('ho-so', $con->mahoso)}}">Con thứ: 1 - Đời thứ:
                                             10 {{$con->hoten}}</a></li>
                                 @endforeach
-                            </ul>
-                        </div>
-                        <div class="col-sm-12 col-md-6">
-                            <h5><i class="fa fa-arrow-circle-o-up"></i> Cháu ngoại</h5>
-                            <ul>
-                                <li><a>Con thứ: 1 - Đời thứ: 10 Nguyễn Thị G</a></li>
                             </ul>
                         </div>
                     </div>
