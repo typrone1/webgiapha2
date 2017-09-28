@@ -14,7 +14,9 @@ function inGiaPha($data, $mahsbo = null)
     foreach ($data as $val) {
         $parent = $val['mahsbo'];
         if ($parent == $mahsbo) {
-            echo '<li><a class="hop-chua" href="ho-so/'.$val['mahoso'].'">' . $val['mahoso'] . '–' . $val['hoten'] ." (". $val['hotenvo'].")". '</a>';
+            echo '<li><a class="hop-chua" href="ho-so/'.$val['mahoso'].'" data-toggle="modal" 
+            data-target="#hopThongTin" data-id="'.$val['mahoso'].'">' . $val['mahoso'] . '–' . $val['hoten']
+                ." (". $val['hotenvo'].")". '</a>';
             $mahoso = $val['mahoso'];
             inGiaPha($data, $mahoso);
         }

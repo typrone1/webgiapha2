@@ -39,4 +39,7 @@ class AdminController extends Controller
         $dsNhanhBo = HoSo::all();
         return view('admin.them-ho-so', compact('dsNhanhBo'));
     }
+    protected function test(){
+        return view('users.test');
+    }
 }

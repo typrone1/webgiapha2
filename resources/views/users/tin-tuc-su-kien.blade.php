@@ -10,23 +10,7 @@
             </div>
         </div>
     </header>
-    <section id="actions" class="py-4 mb-4 bg-faded">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-6 offset-md-6">
-                    <div class="input-group">
-                        <input type="text" class="form-control">
-                        <span class="input-group-btn">
-                <button class="btn btn-warning">Tìm kiếm</button>
-              </span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-
-    <section class="p-5">
+    <section class="py-4 mb-4">
         <div class="container">
             <div class="row">
                 <div class="col-sm-12 col-md-8">

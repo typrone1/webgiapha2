@@ -44,3 +44,5 @@ Route::group(['middleware' => 'auth'], function() {
     Route::get('chi-tiet-ho-so/{id}/them-vo', 'VCHoSoController@getThemVo')->name('them-vo');
     Route::get('them-con/{id}','HoSoController@getThemCon')->name('them-con');
 });
+Route::get('test', 'AdminController@test');
+Route::get('chi-tiet/{id}', 'AjaxController@getHoSo')->name('chi-tiet');

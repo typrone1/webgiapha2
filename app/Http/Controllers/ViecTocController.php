@@ -42,7 +42,7 @@ class ViecTocController extends Controller
         $baiViet = new BaiViet();
         $baiViet->madanhmuc = $request->madanhmuc;
         $baiViet->tieude = $request->tieude;
-        $baiViet->noidung = $request->editor1;
+        $baiViet->noidung = $request->editor2;
         $data = $request->input('hinhanh');
         $photo = $request->file('hinhanh')->getClientOriginalName();
         $destination = base_path() . '/public/img/anhbaiviet';
